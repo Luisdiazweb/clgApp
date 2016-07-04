@@ -39,49 +39,43 @@ angular.module('clg.controllers')
 				
 				setStep(_current + 1);
 
-				if ( $rootScope.sync_catalogues[_current].synced ) {
-					_current++;
-					sync_now();
+
+				$rootScope.sync_catalogues[_current].synced = 0;
+				$rootScope.sync_catalogues[_current].synced_at = null;
+
+				if ( $rootScope.sync_catalogues[_current].mapping ) {
+					$http.get($rootScope.sync_catalogues[_current].api_url)
+			    	.then(function(response) {
+
+			    		$rootScope.loaded();
+
+			    		$rootScope.sync_catalogues[_current].total_records = response.data.length;
+			    		$rootScope.sync_index = 1;
+
+			    		$rootScope.sync_catalogues[_current].mapping.bulk_sync(response.data, $rootScope.sync_catalogues[_current].label, 
+			    			function() {
+			    				var _synced_at = (new Date()).getTime();
+
+			    				$rootScope.sync_catalogues[_current].synced = 1;
+			    				$rootScope.sync_catalogues[_current].synced_at = _synced_at;
+			    				$rootScope.sync_catalogues[_current].synced_at_local = moment(_synced_at).fromNow();
+
+				    			_current++;
+				    			sync_now();
+				    		}
+			    		);
+
+
+			    	}, function() {
+			    		$rootScope.showAlert("Algo salio mal.", 'El servidor no responde, porfavor intenta mas tarde.');
+			    		$rootScope.loaded();
+
+			    		sync_now();
+			    	});
 				} else {
-
-					$rootScope.sync_catalogues[_current].synced = 0;
-					$rootScope.sync_catalogues[_current].synced_at = null;
-
-					if ( $rootScope.sync_catalogues[_current].mapping ) {
-						$http.get($rootScope.sync_catalogues[_current].api_url)
-				    	.then(function(response) {
-
-				    		$rootScope.loaded();
-
-				    		$rootScope.sync_catalogues[_current].total_records = response.data.length;
-				    		$rootScope.sync_index = 1;
-
-				    		$rootScope.sync_catalogues[_current].mapping.bulk_sync(response.data, $rootScope.sync_catalogues[_current].label, 
-				    			function() {
-				    				var _synced_at = (new Date()).getTime();
-
-				    				$rootScope.sync_catalogues[_current].synced = 1;
-				    				$rootScope.sync_catalogues[_current].synced_at = _synced_at;
-				    				$rootScope.sync_catalogues[_current].synced_at_local = moment(_synced_at).fromNow();
-
-					    			_current++;
-					    			sync_now();
-					    		}
-				    		);
-
-
-				    	}, function() {
-				    		$rootScope.showAlert("Algo salio mal.", 'El servidor no responde, porfavor intenta mas tarde.');
-				    		$rootScope.loaded();
-
-				    		sync_now();
-				    	});
-					} else {
-						$rootScope.loaded();
-						_current++;
-	    			sync_now();
-					}
-
+					$rootScope.loaded();
+					_current++;
+    			sync_now();
 				}
 
 			} else {
