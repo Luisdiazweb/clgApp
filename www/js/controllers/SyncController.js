@@ -135,30 +135,35 @@ angular.module('clg.controllers')
 
 
 
+
+  function checkLastSynced() {
+  	for (var i = 0; i < $rootScope.sync_catalogues.length; i++) {
+  		(function(i){
+  			if ( $rootScope.sync_catalogues[i].mapping ) {
+    			$rootScope.sync_catalogues[i].mapping.check_syncing(function(synced_at) {
+
+    				$rootScope.sync_catalogues[i].synced = synced_at ? 1 : 0;
+    				$rootScope.sync_catalogues[i].synced_at = synced_at;
+    				$rootScope.sync_catalogues[i].synced_at_local = moment(synced_at).fromNow();
+    				
+    			});
+    		}
+  		})(i);
+  	}
+
+  	$rootScope.checkedSyncing = true;
+  }
+
+
+
   $rootScope.$watch('deviceReady', function(isReady) {
     if ( isReady ) {
       if ( !$rootScope.checkedModuleTables ) {
         $scope.checkTables();
       }
 
-      if ( !$rootScope.checkedSyncing ) {
-      	for (var i = 0; i < $rootScope.sync_catalogues.length; i++) {
-      		(function(i){
-      			if ( $rootScope.sync_catalogues[i].mapping ) {
-	      			$rootScope.sync_catalogues[i].mapping.check_syncing(function(synced_at) {
-	      				console.log("Sincro checking status", synced_at);
+      checkLastSynced();
 
-	      				$rootScope.sync_catalogues[i].synced = synced_at ? 1 : 0;
-	      				$rootScope.sync_catalogues[i].synced_at = synced_at;
-	      				$rootScope.sync_catalogues[i].synced_at_local = moment(synced_at).fromNow();
-	      				
-	      			});
-	      		}
-      		})(i);
-      	}
-
-      	$rootScope.checkedSyncing = true;
-      }
     }
   });
 

@@ -26,6 +26,12 @@ angular.module('clg.config')
       templateUrl: 'views/clients.html'
     })
 
+    .state('clientes_detalle', {
+      url: "/clientes/:id",
+      controller: "ClientsController",
+      templateUrl: 'views/clients.details.html'
+    })
+
 
     .state('sync', {
       url: "/sync",

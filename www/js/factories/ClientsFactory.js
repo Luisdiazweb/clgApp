@@ -19,6 +19,27 @@ angular.module('clg.factories')
       });
 		},
 
+		all: function() {
+			var query = "SELECT * FROM Cartera_Clientes";
+      return $cordovaSQLite.execute($rootScope.database, query, []);
+		},
+
+		find: function(id) {
+			var query = "SELECT * FROM Cartera_Clientes WHERE ClienteCodigo = ?";
+      return $cordovaSQLite.execute($rootScope.database, query, [id]);
+		},
+
+		page: function(num) {
+			var limit = 0;
+			if ( num != undefined && num > 0 ) {
+				num = num - 1;
+				limit = (num*10) + ",10"
+			}
+
+			var query = "SELECT * FROM Cartera_Clientes GROUP BY ClienteCodigo limit " + limit;
+      return $cordovaSQLite.execute($rootScope.database, query, []);
+		},
+
 		bulk_sync: function(data, label, returningCallback) {
 			$cordovaSQLite.execute($rootScope.database,  "DROP TABLE Cartera_Clientes");
 
@@ -57,12 +78,12 @@ angular.module('clg.factories')
 		        .then(function(res) {
 		          
 		          _i++;
-		          $timeout(injectClient, 100);
+		          $timeout(injectClient, 10);
 
 				    }, function (err) {
 			        // re-try
 			        console.log("ESQUE OCURRIO ERROR", err);
-		          $timeout(injectClient, 100);
+		          $timeout(injectClient, 10);
 				    });
 
 				} else {

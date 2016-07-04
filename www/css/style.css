@@ -61,6 +61,8 @@
 .syncing-box-progressbar .syncing-box-progress{
 	background-color: #387ef5;
   height: 2px;
+  -webkit-transition: width 0.1s;
+  transition: width 0.1s;
 }
 
 .item-synceable{
@@ -71,4 +73,69 @@
 .item-synceable.item-syncing, .item-synceable.item-ready{
 	opacity: 1;
 	background-color: transparent;
+}
+
+.u-capitalize{
+	text-transform: capitalize;
+}
+
+.u-bold{
+	font-weight: 600 !important;
+}
+
+
+
+.item.item-client h2{
+	font-size: 14px;
+}
+
+.item.item-client p{
+	font-size: 12px;
+}
+
+.client-doubt{
+	color: #e42112 !important;
+}
+
+.button.button-positive-color {
+	color: #387ef5;
+}
+
+.button.button-positive-color:before {
+	font-size: 25px !important;
+  line-height: 28px !important;
+}
+
+
+.client-details .item-divider{
+	padding-top: 20px;
+  font-size: 13px;
+  color: #757575;
+}
+
+.client-details .row,
+.client-details .row .col{
+	font-size: 14px;
+}
+
+.client-details .row .col:first-child{
+	color: #000;
+}
+
+.inline-spinner{
+	display: inline-block;
+	vertical-align: middle;
+	height: 28px;
+}
+
+.align-right{
+	position: absolute;
+	right: 15px;
+	top: 50%;
+	margin-top: -15px;
+	text-transform: uppercase;
+}
+
+.item-center{
+	text-align: center;
 }

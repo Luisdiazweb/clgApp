@@ -1,0 +1,65 @@
+<ion-view view-title="Clientes">
+  
+  <ion-nav-bar align-title="center">
+    <ion-nav-back-button class="button-positive"></ion-nav-back-button>
+  </ion-nav-bar>
+
+  <ion-nav-buttons side="right">
+    <a class="button button-icon icon ion-ios-search-strong button-positive-color" href="#/search"></a>
+  </ion-nav-buttons>
+
+  <ion-content>
+   <div class="spacer"></div>
+    
+  <div class="client-details">
+    <div class="item item-divider">
+      INFORMACION PERSONAL
+    </div>
+
+    <div class="row item">
+      <div class="col u-bold">Nombres</div>
+      <div class="col col-75 u-capitalize">{{ cliente.ClienteNombre }}</div>
+    </div>
+
+    <div class="row item">
+      <div class="col u-bold">Depto.</div>
+      <div class="col col-75 u-capitalize">{{ cliente.Departamento }}</div>
+    </div>
+
+    <div class="row item">
+      <div class="col u-bold">Municipio</div>
+      <div class="col col-75 u-capitalize">{{ cliente.Municipio }}</div>
+    </div>
+  </div>
+
+  <div class="client-reports">
+    
+    <div class="list">
+      <div class="item item-divider">
+        <div class="align-right">
+          <a class="button button-clear button-positive button-small button-small-upper">Ver todas</a>
+        </div>
+
+        Facturas 
+        <div class="inline-spinner">
+          <ion-spinner icon="ios-small"></ion-spinner>
+        </div>
+      </div>
+
+      <div class="item item-center">
+        <ion-spinner></ion-spinner>
+      </div>
+
+      <a class="item item-icon-left item-report" href="#/{{ cliente.ClienteCodigo }}/facturas/{{ cliente.NumeroFactura }}">
+        <i class="icon ion-android-list"></i>
+        <span class="u-bold">#000</span> &nbsp; $300
+        <span class="item-note">150-12</span>
+      </a>
+    </div>
+
+    
+  </div>
+
+
+  </ion-content>
+</ion-view>
