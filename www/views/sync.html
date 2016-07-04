@@ -1,0 +1,42 @@
+<ion-view view-title="Sincronizar">
+  
+  <ion-nav-bar align-title="center">
+    <ion-nav-back-button class="button-positive"></ion-nav-back-button>
+  </ion-nav-bar>
+
+  <ion-nav-buttons side="right">
+    <a class="button button-outline button-positive" href="#/sync/start">
+      <i class="icon ion-android-sync"></i>
+    </a>
+  </ion-nav-buttons>
+
+  <ion-content>
+   <div class="spacer"></div>
+    
+   <div class="list">
+
+   <a class="item item-icon-left" href="#/sync/settings">
+      <i class="icon ion-gear-b"></i>
+      Sincronizaciones automaticas
+    </a>
+
+   <div class="item item-divider">
+      Catalogos
+    </div>
+
+    <!-- <button class="button button-positive" ng-click="checkUser()">Select</button> -->
+
+    <div class="item item-icon-left" ng-repeat="item in sync_catalogues">
+      <i class="icon {{ item.icon }}"></i>
+      {{ item.label }}
+      <span class="item-note">
+        {{ item.synced ? 'Sincronizado ' + item.synced_at_local : 'No sincronizado' }}
+      </span>
+    </div>
+
+
+
+  </div>
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,82 @@
+[
+	{
+		"id": 1, 
+		"descripcion": "IMPORTACION"
+	},
+	{
+		"id": 2, 
+		"descripcion": "ANZUELOS"
+	},
+	{
+		"id": 3, 
+		"descripcion": "TORNILLO/PERNO/CLAVO OBSOLETO"
+	},
+	{
+		"id": 4, 
+		"descripcion": "BYP"
+	},
+	{
+		"id": 5, 
+		"descripcion": "ANGELITO"
+	},
+	{
+		"id": 6, 
+		"descripcion": "RODEO"
+	},
+	{
+		"id": 7, 
+		"descripcion": "VICTORIA"
+	},
+	{
+		"id": 8, 
+		"descripcion": "BAR"
+	},
+	{
+		"id": 9, 
+		"descripcion": "C.A. MEJIA"
+	},
+	{
+		"id": 10, 
+		"descripcion": "CORONA"
+	},
+	{
+		"id": 11, 
+		"descripcion": "NORTON"
+	},
+	{
+		"id": 12, 
+		"descripcion": "FAMA"
+	},
+	{
+		"id": 13, 
+		"descripcion": "SEA FAITH (HILO PEZCA)"
+	},
+	{
+		"id": 14, 
+		"descripcion": "PEZ VOLADOR BLANCO"
+	},
+	{
+		"id": 15, 
+		"descripcion": "PEZ VOLADOR"
+	},
+	{
+		"id": 16, 
+		"descripcion": "LIMA TRES LIMAS"
+	},
+	{
+		"id": 17, 
+		"descripcion": "MUNDIAL"
+	},
+	{
+		"id": 18, 
+		"descripcion": "V&G"
+	},
+	{
+		"id": 19, 
+		"descripcion": "NACIONAL"
+	},
+	{
+		"id": 20, 
+		"descripcion": "PIEDRA CARBORUNDUM"
+	}
+]

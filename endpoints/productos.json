@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "codigo_producto": "X00030",
+    "descripcion": "ALMADANA C/ MANGO 4 LBS HIND?",
+    "categoria_id": 2,
+    "marca_id": 1,
+    "precio_1": 6.48,
+    "precio_2": 5.4,
+    "precio_3": 0,
+    "precio_4": 0,
+    "precio_5": 0,
+    "existencias": 0,
+    "costo_unitario": 3.6825,
+    "costo_total": 0
+  },
+  {
+    "id": 2,
+    "codigo_producto": "X00031",
+    "descripcion": "ALMADANA C/ MANGO 6 LBS HIND?",
+    "categoria_id": 2,
+    "marca_id": 1,
+    "precio_1": 5.5,
+    "precio_2": 5,
+    "precio_3": 0,
+    "precio_4": 0,
+    "precio_5": 0,
+    "existencias": 0,
+    "costo_unitario": 0,
+    "costo_total": 0
+  },
+  {
+    "id": 11,
+    "codigo_producto": "X00040",
+    "descripcion": "ANZUELO DE ACERO # 10 DOUBLE FISH",
+    "categoria_id": 2,
+    "marca_id": 2,
+    "precio_1": 0.023,
+    "precio_2": 0.018,
+    "precio_3": 0,
+    "precio_4": 0,
+    "precio_5": 0,
+    "existencias": 0,
+    "costo_unitario": 0.0074,
+    "costo_total": 0
+  }
+]

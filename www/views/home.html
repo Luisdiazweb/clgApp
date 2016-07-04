@@ -1,0 +1,26 @@
+<ion-view view-title="Actividades" hide-back-button="true">
+  
+  <ion-nav-buttons side="left">
+    <button class="button button-outline button-positive" ng-click="toggleLeft()">
+      <i class="icon ion-gear-a"></i>
+    </button>
+  </ion-nav-buttons>
+  
+  <ion-nav-buttons side="right">
+  </ion-nav-buttons>
+
+  <ion-content>
+   <div class="spacer"></div>
+    
+   <div class="list list-inset">
+
+    <a ng-repeat="activity in homeActivities" class="item item-thumbnail-left" href="{{ activity.url }}">
+      <img ng-src="{{ activity.image }}">
+      <h2>{{ activity.title }}</h2>
+      <p>{{ activity.description }}</p>
+    </a>
+
+  </div>
+
+  </ion-content>
+</ion-view>

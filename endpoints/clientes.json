@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "codigo_cliente": "180399-3",
+    "nombre_cliente": "BORIS WILLFREDO CANJURA MARMOL",
+    "departamento": "San Salvador",
+    "municipio": "San Salvador"
+  },
+  {
+    "id": 2,
+    "codigo_cliente": "85590-1",
+    "nombre_cliente": "SILVIA IRIS AREVALO DE SAADE",
+    "departamento": "San Salvador",
+    "municipio": "San Marcos"
+  }
+]

@@ -1,0 +1,594 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"device",
+				"deviceReady"
+			],
+			[
+				"is",
+				"isReady"
+			],
+			[
+				"new",
+				"newStatus"
+			],
+			[
+				"rt",
+				"rootScope"
+			],
+			[
+				"ne",
+				"newStatus"
+			],
+			[
+				"show",
+				"showedAt"
+			],
+			[
+				"log",
+				"logged"
+			],
+			[
+				"user",
+				"user_id"
+			],
+			[
+				"che",
+				"checkIfWasAuth"
+			],
+			[
+				"Clien",
+				"ClientsFactory"
+			],
+			[
+				"error",
+				"errorCallback"
+			],
+			[
+				"insert",
+				"insertId"
+			],
+			[
+				"inse",
+				"insertUser"
+			],
+			[
+				"preve",
+				"preventDefault"
+			],
+			[
+				"can",
+				"cancel"
+			],
+			[
+				"get",
+				"get_variable"
+			],
+			[
+				"alert",
+				"alert_defaults"
+			],
+			[
+				"root",
+				"rootScope"
+			],
+			[
+				"post",
+				"post_type"
+			],
+			[
+				"ambien",
+				"ambientClass"
+			],
+			[
+				"vime",
+				"vimeoSeconds"
+			],
+			[
+				"video",
+				"video_instance"
+			],
+			[
+				"player",
+				"player_id"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "www/index.html",
+			"settings":
+			{
+				"buffer_size": 2720,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/js/controllers/MainController.js",
+			"settings":
+			{
+				"buffer_size": 3875,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "www/js/app.js",
+			"settings":
+			{
+				"buffer_size": 2816,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 92.0,
+		"last_filter": "gulp last",
+		"selected_items":
+		[
+			[
+				"gulp last",
+				"Gulp: Run last task"
+			],
+			[
+				"gulp",
+				"Gulp"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 414.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/E/httpdocs/clg-app",
+		"/E/httpdocs/clg-app/platforms",
+		"/E/httpdocs/clg-app/plugins",
+		"/E/httpdocs/clg-app/scss",
+		"/E/httpdocs/clg-app/www",
+		"/E/httpdocs/clg-app/www/css",
+		"/E/httpdocs/clg-app/www/js",
+		"/E/httpdocs/clg-app/www/js/controllers",
+		"/E/httpdocs/clg-app/www/js/factories",
+		"/E/httpdocs/clg-app/www/views"
+	],
+	"file_history":
+	[
+		"/E/httpdocs/clg-app/www/lib/biu/src/jade/index.jade",
+		"/E/httpdocs/clg-app/www/js/app.js",
+		"/E/httpdocs/clg-app/www/views/sync.html",
+		"/E/httpdocs/clg-app/www/views/sync.start.html",
+		"/E/httpdocs/clg-app/www/css/style.css",
+		"/E/httpdocs/clg-app/www/js/controllers/ClientsController.js",
+		"/E/httpdocs/clg-app/www/js/controllers/LogoutController.js",
+		"/E/httpdocs/clg-app/www/js/controllers/LoginController.js",
+		"/E/httpdocs/clg-app/endpoints/user_login.php",
+		"/E/httpdocs/clg-app/www/js/controllers/MainController.js",
+		"/E/httpdocs/clg-app/www/views/login.html",
+		"/E/httpdocs/clg-app/www/js/factories/ClientsFactory.js",
+		"/E/httpdocs/clg-app/www/js/controllers/SyncController.js",
+		"/E/httpdocs/clg-app/www/views/home.html",
+		"/E/httpdocs/clg-app/www/views/clients.html",
+		"/E/httpdocs/clg-app/www/lib/biu/node_modules/xo/node_modules/babel-eslint/node_modules/babel-types/node_modules/lodash/_assignInDefaults.js",
+		"/E/httpdocs/clg-app/www/lib/biu/dist/biu.cjs.js",
+		"/E/httpdocs/clg-app/www/lib/biu/.bower.json",
+		"/E/httpdocs/clg-app/www/lib/biu/src/styl/biu.styl",
+		"/E/httpdocs/clg-app/www/lib/biu/src/js/biu.js",
+		"/E/httpdocs/clg-app/.bowerrc",
+		"/E/httpdocs/clg-app/bower.json",
+		"/C/Users/jadiel/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/E/httpdocs/clg-app/www/js/factories/AuthManager.js",
+		"/E/httpdocs/clg-app/www/index.html",
+		"/E/httpdocs/clg-app/endpoints/api_config.php",
+		"/E/httpdocs/clg-app/endpoints/user_login.json",
+		"/E/httpdocs/clg-app/www/js/controllers/HomeController.js",
+		"/E/httpdocs/clg-app/endpoints/user_login_error.json",
+		"/E/httpdocs/clg-app/endpoints/clients.php",
+		"/E/httpdocs/clg-app/endpoints/products.php",
+		"/E/httpdocs/clg-app/endpoints/clientes.php",
+		"/E/httpdocs/dccolorweb/gds/events/index.php",
+		"/E/httpdocs/nuu/mora-state/bower.json",
+		"/E/httpdocs/nuu/mora-state/src/scripts/blog-grid.js",
+		"/E/httpdocs/nuu/mora-state/gulpfile.js",
+		"/E/httpdocs/elliemae/editor/inDaaS/angular/factories/pages.js",
+		"/E/httpdocs/elliemae/editor/inDaaS/angular/services/dialog.js",
+		"/E/httpdocs/elliemae/editor/inDaaS/angular/controllers/content_editor.js",
+		"/E/httpdocs/elliemae/editor/inDaaS/angular/main.js",
+		"/E/vagrantdocs/archgard-cms/app/assets/javascripts/zzzz-main.js",
+		"/E/httpdocs/dccolorweb/gds/assets/sass/_revamp-story.scss",
+		"/E/httpdocs/dccolorweb/gds/index.php",
+		"/E/httpdocs/clg-app/scss/ionic.app.scss",
+		"/E/httpdocs/clg-app/endpoints/categorias.json",
+		"/E/httpdocs/clg-app/endpoints/productos.php",
+		"/E/httpdocs/clg-app/endpoints/marcas.php",
+		"/E/httpdocs/clg-app/endpoints/facturas.php",
+		"/E/httpdocs/clg-app/endpoints/categorias.php",
+		"/E/httpdocs/clg-app/endpoints/clientes.json",
+		"/E/httpdocs/clg-app/endpoints/productos.json",
+		"/E/httpdocs/clg-app/endpoints/marcas.json",
+		"/E/httpdocs/clg-app/endpoints/facturas.json",
+		"/E/httpdocs/morastate/wp-content/themes/mora-state/content.php",
+		"/E/httpdocs/morastate/wp-content/themes/mora-state/index.php",
+		"/E/httpdocs/morastate/wp-content/themes/mora-state/templates/page-home.php",
+		"/E/httpdocs/dccolorweb.gdsbrasil/bower.json",
+		"/E/httpdocs/morastate/wp-content/themes/mora-state/content-wines.php",
+		"/E/httpdocs/morastate/wp-content/themes/mora-state/footer.php",
+		"/E/httpdocs/nuu/mora-state/src/styles/_navbar.scss",
+		"/E/httpdocs/morastate/wp-content/themes/mora-state/header.php",
+		"/E/httpdocs/nuu/mora-state/src/styles/_newsfeed.scss",
+		"/E/httpdocs/nuu/mora-state/src/styles/_utils.scss",
+		"/E/httpdocs/nuu/mora-state/src/styles/_blog.scss",
+		"/E/httpdocs/morastate/wp-content/themes/mora-state/functions.php",
+		"/E/httpdocs/nuu/mora-state/src/scripts/index.js",
+		"/E/httpdocs/nuu/mora-state/src/styles/_product-list.scss",
+		"/E/httpdocs/nuu/mora-state/src/styles/_product-details.scss",
+		"/E/httpdocs/morastate/wp-content/themes/mora-state/comments.php",
+		"/E/httpdocs/morastate/wp-content/themes/mora-state/single.php",
+		"/E/httpdocs/nuu/mora-state/src/scripts/preloader.js",
+		"/E/httpdocs/nuu/mora-state/src/styles/_fullscreen-video.scss",
+		"/E/httpdocs/nuu/mora-state/src/scripts/fullscreen-video.js",
+		"/C/Users/jadiel/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/jadiel/AppData/Local/Temp/scp01706/html/dev/wp-content/themes/wp_charity/functions.php",
+		"/C/Users/jadiel/AppData/Local/Temp/scp44352/html/dev/wp-content/themes/wp_charity/framework/functions/header_function.php",
+		"/C/Users/jadiel/AppData/Local/Temp/scp02102/html/dev/wp-content/themes/wp_charity/framework/headers/header-v1.php",
+		"/C/Users/jadiel/AppData/Local/Temp/scp00223/html/dev/wp-content/themes/wp_charity/header.php",
+		"/C/Users/jadiel/AppData/Local/Temp/scp40691/html/dev/wp-content/themes/wp_charity/framework/abstract.php",
+		"/E/design/dccolorweb/elpiche/video-gallery.js",
+		"/C/Users/jadiel/AppData/Roaming/Skype/My Skype Received Files/wp-config.php",
+		"/C/Users/jadiel/Downloads/comiteacutesalvadorentildeoelpiche.wordpress.2016-06-22.xml",
+		"/E/httpdocs/nuu/mora-state/bower_components/videojs-vimeo/src/Vimeo.js",
+		"/C/ProgramData/NVIDIA Corporation/NetService/NSManagedTasks.xml"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"AuthManager",
+			"setUserAsLogged",
+			"loginSuccess",
+			"setUserAsLogged",
+			"toggle",
+			"open",
+			"checkLocalUserLogged",
+			"loading",
+			"createLocalLogin",
+			"checkLocalUser",
+			"setUserAsLogged",
+			"prettifyDealersData",
+			"events",
+			"wd_before_header",
+			"phone-hea",
+			"account",
+			"woo-account",
+			"account",
+			"header",
+			"invitation",
+			"_preload",
+			"onLoadProgress",
+			"trigger",
+			"setCurrentTime",
+			"onFinish",
+			"seek",
+			"addVimeoApiEvent",
+			"Event",
+			"addEvent",
+			"muted",
+			"onPlayProgress",
+			"addEvent",
+			"seek",
+			"setMu",
+			"ready",
+			"$f",
+			"ambient"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "www/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2720,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								725,
+								725
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 44.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "www/js/controllers/MainController.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3875,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2549,
+								2549
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1825.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "www/js/app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2816,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1069,
+								1069
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 390.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 63.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": false,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.gulp_output":
+	{
+		"height": 132.0
+	},
+	"pinned_build_system": "",
+	"project": "clg-app.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"app.js",
+				"www\\js\\app.js"
+			],
+			[
+				"mainc",
+				"www\\js\\controllers\\MainController.js"
+			],
+			[
+				"index.",
+				"www\\index.html"
+			],
+			[
+				"inde",
+				"www\\lib\\biu\\node_modules\\xo\\node_modules\\babel-eslint\\node_modules\\babel-types\\node_modules\\lodash\\_assignInDefaults.js"
+			],
+			[
+				"index",
+				"www\\index.html"
+			],
+			[
+				"authman",
+				"www\\js\\factories\\AuthManager.js"
+			],
+			[
+				"authma",
+				"www\\js\\factories\\AuthManager.js"
+			],
+			[
+				"main",
+				"www\\js\\controllers\\MainController.js"
+			],
+			[
+				"loginc",
+				"www\\js\\controllers\\LoginController.js"
+			],
+			[
+				"homeco",
+				"www\\js\\controllers\\HomeController.js"
+			],
+			[
+				"app",
+				"www\\js\\app.js"
+			],
+			[
+				"",
+				"www\\js\\factories\\Auth.js"
+			],
+			[
+				"wine",
+				"morastate\\wp-content\\themes\\mora-state\\content-wines.php"
+			],
+			[
+				"functions",
+				"morastate\\wp-content\\themes\\mora-state\\functions.php"
+			],
+			[
+				"navbar",
+				"mora-state\\src\\styles\\_navbar.scss"
+			],
+			[
+				"header",
+				"morastate\\wp-content\\themes\\mora-state\\header.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 222.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

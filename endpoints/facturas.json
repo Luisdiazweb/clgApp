@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "periodo": 20141119,
+    "numero_factura": 7285,
+    "vendedor": "Nelson Guzman",
+    "cliente_codigo": "180399-3",
+    "rango": "7. 150 -",
+    "total_factura": 243.91,
+    "cantidad_abonada": 292.48,
+    "total": -48.57
+  },
+  {
+    "id": 2,
+    "periodo": 20150619,
+    "numero_factura": 12991,
+    "vendedor": "Douglas Enrique Ortiz",
+    "cliente_codigo": "85590-1",
+    "rango": "7. 150 -",
+    "total_factura": 366.97,
+    "cantidad_abonada": 349.57,
+    "total": 17.4
+  },
+  {
+    "id": 3,
+    "periodo": 20150622,
+    "numero_factura": 13225,
+    "vendedor": "Douglas Enrique Ortiz",
+    "cliente_codigo": "85590-1",
+    "rango": "7. 150 -",
+    "total_factura": 64.46,
+    "cantidad_abonada": 0,
+    "total": 64.46
+  }
+]

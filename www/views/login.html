@@ -1,0 +1,18 @@
+<ion-view view-title="Acceder">
+  <ion-content>
+   <div class="spacer"></div>
+    <h2 class="title text-center">Entrar</h2>
+    <div class="list list-inset">
+      <label class="item item-input">
+        <input type="text" placeholder="Correo" ng-model="loginData.email" >
+      </label>
+      <label class="item item-input">
+        <input type="password" placeholder="Clave de usuario"  ng-model="loginData.password" >
+      </label>
+      
+      <button class="button button-block button-positive" ng-click="login()">
+        Verificar datos
+      </button>
+    </div>
+  </ion-content>
+</ion-view>
