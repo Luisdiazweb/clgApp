@@ -5,13 +5,30 @@ angular.module('clg.controllers')
 
 	$scope.backgroundLoading = false;
 
+	$scope.searchQuery = '';
+	$scope.delay;
+
+
+	$scope.$watch('searchQuery', function(query) {
+		if ( $scope.delay || $scope.backgroundLoading ) {
+			clearTimeout($scope.delay);
+		}
+
+		$scope.backgroundLoading = true;
+		if ( $scope.searchQuery.trim() == "" ) {
+			$scope.backgroundLoading = false;
+			return false;
+		}
+
+		$scope.delay = $timeout($scope.searchClients, 500);
+	});
 
 
 
 
 	$scope.prevPage = function() {
-		if ($rootScope.clientes.pagina_actual > 1) {
-			--$rootScope.clientes.pagina_actual;
+		if ($rootScope.clientes.busqueda.pagina_actual > 1) {
+			--$rootScope.clientes.busqueda.pagina_actual;
 		}
 	}
 
@@ -23,7 +40,8 @@ angular.module('clg.controllers')
 
 		$scope.backgroundLoading = true;
 
-		$rootScope.Catalogos.Clientes.page($rootScope.clientes.pagina_actual+1).then(function(res) {
+		
+		$rootScope.Catalogos.Clientes.search($scope.searchQuery, $rootScope.clientes.busqueda.pagina_actual+1).then(function(res) {
 			
 			var _page_rows = [];
 			for (var i = 0; i < res.rows.length; i++) {
@@ -43,8 +61,8 @@ angular.module('clg.controllers')
 
 
 			$timeout(function() {
-				$rootScope.clientes.todos[$rootScope.clientes.pagina_actual+1] = _page_rows;
-				++$rootScope.clientes.pagina_actual;
+				$rootScope.clientes.busqueda.resultados[$rootScope.clientes.busqueda.pagina_actual+1] = _page_rows;
+				++$rootScope.clientes.busqueda.pagina_actual;
 				$scope.backgroundLoading = false;
 			}, 500);
 
@@ -55,12 +73,9 @@ angular.module('clg.controllers')
 
 
 	$scope.searchClients = function() {
-		$rootScope.loading();
+		$scope.backgroundLoading = true;
 
-		$rootScope.clientes.pagina_actual = 1;
-		$rootScope.clientes.todos[$rootScope.clientes.pagina_actual] = [];
-
-		$rootScope.Catalogos.Clientes.page(1).then(function(res) {
+		$rootScope.Catalogos.Clientes.search($scope.searchQuery, 1).then(function(res) {
 			
 			var _page_rows = [];
 			for (var i = 0; i < res.rows.length; i++) {
@@ -79,8 +94,11 @@ angular.module('clg.controllers')
 			}
 
 
-			$rootScope.clientes.todos[$rootScope.clientes.pagina_actual] = _page_rows;
-			$rootScope.loaded();
+			$rootScope.clientes.busqueda.resultados = {};
+			$rootScope.clientes.busqueda.resultados[$rootScope.clientes.busqueda.pagina_actual] = [];
+			$rootScope.clientes.busqueda.resultados[$rootScope.clientes.busqueda.pagina_actual] = _page_rows;
+
+			$scope.backgroundLoading = false;
 		}, function(err) {
 			// console.log(err);
 		});

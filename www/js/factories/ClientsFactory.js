@@ -100,6 +100,17 @@ angular.module('clg.factories')
       return $cordovaSQLite.execute($rootScope.database, query, []);
 		},
 
+		search: function(search_query, num) {
+			var limit = 0;
+			if ( num != undefined && num > 0 ) {
+				num = num - 1;
+				limit = (num*10) + ",10"
+			}
+
+			var query = "SELECT * FROM Cartera_Clientes WHERE ClienteNombre LIKE ? GROUP BY ClienteCodigo limit " + limit;
+      return $cordovaSQLite.execute($rootScope.database, query, ['%' + search_query + '%']);
+		},
+
 
 		db: {
 			drop: function() {

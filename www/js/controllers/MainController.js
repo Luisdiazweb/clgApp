@@ -8,8 +8,9 @@ angular.module('clg.controllers')
   $rootScope.checkedModuleTables = false;
   $rootScope.checkedSyncing = false;
   $rootScope.sync_index = 0;
-  $scope.contentLoaded = true;
   $rootScope.back_to = { name: "", params: {} };
+  
+  $scope.contentLoaded = true;
 
   $rootScope.clientes = ClientsFactory.caching;
 

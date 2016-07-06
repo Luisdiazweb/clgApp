@@ -4,8 +4,17 @@
     <ion-nav-back-button class="button-positive"></ion-nav-back-button>
   </ion-nav-bar>
 
-  <ion-header-bar class="bar bar-subheader">
-    <h1 class="title">Subheader</h1>
+  <ion-header-bar class="bar bar-subheader item-input-inset">
+     <label class="item-input-wrapper">
+        <i class="icon ion-ios-search placeholder-icon search-placeholder" ng-show="!backgroundLoading"></i>
+        <span class="inline-spinner" ng-show="backgroundLoading">
+          <ion-spinner icon="ios-small"></ion-spinner>
+        </span>
+        <input type="search" placeholder="Search" ng-model="searchQuery">
+      </label>
+      <button class="button button-clear button-stable" ng-show="searchQuery.length" ng-click="searchQuery=''; clientes.busqueda.resultados = {};">
+        Cancel
+      </button>
   </ion-header-bar>
 
   <ion-content>

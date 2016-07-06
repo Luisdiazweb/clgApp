@@ -145,8 +145,13 @@
 }
 
 
-.is-search .bar-header {
+.is-search ion-nav-bar .bar-header {
 	border-bottom: none;
+}
+
+.search-placeholder{
+	width: 30px;
+	text-align: center;
 }
 
 
