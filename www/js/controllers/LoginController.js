@@ -135,6 +135,11 @@ angular.module('clg.controllers')
           $state.go("home");
           $rootScope.checkedAuth = true;
           $rootScope.loaded();
+
+          if ( $rootScope.back_to.name ) {
+            $state.go($rootScope.back_to.name, $rootScope.back_to.params);
+            $rootScope.back_to = { name: "", params: {} };
+          }
         }, 
         function(err) {
           console.log(err);

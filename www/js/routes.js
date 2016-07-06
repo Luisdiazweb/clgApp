@@ -23,13 +23,31 @@ angular.module('clg.config')
     .state('clientes', {
       url: "/clientes",
       controller: "ClientsController",
-      templateUrl: 'views/clients.html'
+      templateUrl: 'views/clients/index.html'
+    })
+
+    .state('clientes_busqueda', {
+      url: "/clientes/buscar",
+      controller: "ClientsSearchController",
+      templateUrl: 'views/clients/search.html'
     })
 
     .state('clientes_detalle', {
-      url: "/clientes/:id",
+      url: "/clientes/cliente/:id",
       controller: "ClientsController",
-      templateUrl: 'views/clients.details.html'
+      templateUrl: 'views/clients/details.html'
+    })
+
+    .state('clientes_facturas', {
+      url: "/clientes/cliente/:id/facturas",
+      controller: "ClientsController",
+      templateUrl: 'views/clients/facturas/index.html'
+    })
+
+    .state('clientes_facturas_detalle', {
+      url: "/clientes/cliente/:id/facturas/:factura",
+      controller: "ClientsController",
+      templateUrl: 'views/clients/facturas/details.html'
     })
 
 

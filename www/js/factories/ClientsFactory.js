@@ -3,6 +3,41 @@ angular.module('clg.factories')
 .factory('ClientsFactory', function($rootScope, $state, $cordovaSQLite, $timeout) {
 
 	return {
+		caching: {
+			pagina_actual: 1,
+			todos: {},
+			busqueda: {
+				resultados: {},
+				pagina_actual: 1
+			}, 
+			routing: {
+				base: function() {
+					return '#/clientes';
+				},
+				search: function() {
+					return [this.base(), 'buscar'].join('/');
+				},
+				cliente: function(id) {
+					return [this.base(), 'cliente', id].join('/');
+				},
+				facturas: function(cliente) {
+					return [this.cliente(cliente), "facturas"].join('/');
+				},
+				factura: function(cliente, factura) {
+					return [this.facturas(cliente), factura].join('/');
+				}
+			},
+			actual: {
+				datos: {},
+				facturas: {
+					actual: {},
+					ultimas: [],
+					pagina_actual: 1,
+					todas: {}
+				}
+			}
+		},
+
 		check_syncing: function(returningCallback) {
 			 var query = "SELECT * FROM syncs WHERE module = ? ORDER BY id DESC";
 
@@ -29,6 +64,31 @@ angular.module('clg.factories')
       return $cordovaSQLite.execute($rootScope.database, query, [id]);
 		},
 
+		factura: function(id, factura) {
+			var query = "SELECT * FROM Cartera_Clientes WHERE NumeroFactura = ?";
+      return $cordovaSQLite.execute($rootScope.database, query, [factura]);
+		},
+
+		facturas: function(id, limit) {
+
+			limit = limit != undefined ? " limit 0, " + limit : "";
+
+			var query = "SELECT * FROM Cartera_Clientes WHERE ClienteCodigo = ?" + limit;
+      return $cordovaSQLite.execute($rootScope.database, query, [id]);
+		},
+
+		facturas_paged: function(id, num) {
+
+			var limit = 0;
+			if ( num != undefined && num > 0 ) {
+				num = num - 1;
+				limit = (num*10) + ",10"
+			}
+
+			var query = "SELECT * FROM Cartera_Clientes WHERE ClienteCodigo = ? limit " + limit;
+      return $cordovaSQLite.execute($rootScope.database, query, [id]);
+		},
+
 		page: function(num) {
 			var limit = 0;
 			if ( num != undefined && num > 0 ) {
@@ -40,13 +100,25 @@ angular.module('clg.factories')
       return $cordovaSQLite.execute($rootScope.database, query, []);
 		},
 
-		bulk_sync: function(data, label, returningCallback) {
-			$cordovaSQLite.execute($rootScope.database,  "DROP TABLE Cartera_Clientes");
 
-			$cordovaSQLite.execute($rootScope.database, 
-      "CREATE TABLE IF NOT EXISTS Cartera_Clientes (Periodo integer, Departamento text, Municipio text, NumeroFactura integer, "
-      + "Vendedor text, ClienteCodigo text, ClienteNombre text, RangoPeriodo text, TotalFactura real, "
-      + "Cantidad_Abonada real, Total real)");
+		db: {
+			drop: function() {
+				$cordovaSQLite.execute($rootScope.database,  "DROP TABLE Cartera_Clientes");
+			},
+			init: function() {
+				$cordovaSQLite.execute($rootScope.database, 
+		      "CREATE TABLE IF NOT EXISTS Cartera_Clientes (Periodo integer, Departamento text, Municipio text, NumeroFactura integer, "
+		      + "Vendedor text, ClienteCodigo text, ClienteNombre text, RangoPeriodo text, TotalFactura real, "
+		      + "Cantidad_Abonada real, Total real)");
+			}
+		},
+
+		bulk_sync: function(data, label, returningCallback) {
+			
+			this.db.drop();
+			this.db.init();
+
+			
 
       var _i = 0;
 

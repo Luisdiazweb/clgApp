@@ -1,0 +1,63 @@
+<ion-view view-title="Factura">
+  
+  <ion-nav-bar align-title="center">
+    <ion-nav-back-button class="button-positive"></ion-nav-back-button>
+  </ion-nav-bar>
+
+  <ion-content>
+   <div class="spacer"></div>
+    
+  <div class="client-details">
+    <div class="item item-divider">
+      DETALLES
+    </div>
+
+    <div class="row item">
+      <div class="col u-bold">Codigo</div>
+      <div class="col col-75 u-capitalize">{{ clientes.actual.facturas.actual.NumeroFactura }}</div>
+    </div>
+
+    <div class="row item">
+      <div class="col u-bold">Fecha</div>
+      <div class="col col-75 u-capitalize">{{ clientes.actual.facturas.actual.Periodo }}</div>
+    </div>
+
+    <div class="row item">
+      <div class="col u-bold">Vendedor</div>
+      <div class="col col-75 u-capitalize">{{ clientes.actual.facturas.actual.Vendedor }}</div>
+    </div>
+    
+    <div class="row item">
+      <div class="col u-bold">Cliente</div>
+      <div class="col col-75 u-capitalize">
+        <a href="{{ clientes.routing.cliente( clientes.actual.datos.ClienteCodigo ) }}">{{ clientes.actual.facturas.actual.ClienteNombre }}</a>
+      </div>
+    </div>
+
+    <div class="row item">
+      <div class="col u-bold">Rango</div>
+      <div class="col col-75 u-capitalize">{{ clientes.actual.facturas.actual.RangoPeriodo }}</div>
+    </div>
+
+    <div class="row item">
+      <div class="col u-bold">Total Factura</div>
+      <div class="col col-75 u-bold client-doubt">${{ clientes.actual.facturas.actual.TotalFactura }}</div>
+    </div>
+
+    <div class="row item">
+      <div class="col u-bold">Abonado</div>
+      <div class="col col-75 u-bold client-doubt">${{ clientes.actual.facturas.actual.Cantidad_Abonada }}</div>
+    </div>
+
+    <div class="row item">
+      <div class="col u-bold">Total</div>
+      <div class="col col-75 u-bold client-doubt">${{ clientes.actual.facturas.actual.Total }}</div>
+    </div>
+
+
+  </div>
+
+
+
+  </ion-content>
+</ion-view>

@@ -9,6 +9,9 @@ angular.module('clg.controllers')
   $rootScope.checkedSyncing = false;
   $rootScope.sync_index = 0;
   $scope.contentLoaded = true;
+  $rootScope.back_to = { name: "", params: {} };
+
+  $rootScope.clientes = ClientsFactory.caching;
 
 
   //Define api endpoints
@@ -192,6 +195,11 @@ angular.module('clg.controllers')
       $ionicSideMenuDelegate.toggleLeft();
     }
 
+    angular.element(document.body).removeClass("is-search");
+    if ( toState.name == "clientes_busqueda" ) {
+      angular.element(document.body).addClass("is-search");
+    }
+
     if ( toState.name == "logout" && !$rootScope.user.isLogged() ) {
       cancel = true;
     }
@@ -203,6 +211,9 @@ angular.module('clg.controllers')
     if ( cancel ) {
     	event.preventDefault();
 
+      $rootScope.back_to.name = toState.name;
+      $rootScope.back_to.params = toParams;
+
     	if ( fromState.name != 'index' ) {
     		$state.go('index');
     	}
@@ -210,6 +221,8 @@ angular.module('clg.controllers')
 
       if ( $rootScope.user.isLogged() && toState.name == "index" ) {
         event.preventDefault();
+
+        $state.go("home");
       }
 
     }

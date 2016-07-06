@@ -79,6 +79,10 @@
 	text-transform: capitalize;
 }
 
+.u-uppercase{
+	text-transform: uppercase;
+}
+
 .u-bold{
 	font-weight: 600 !important;
 }
@@ -139,3 +143,18 @@
 .item-center{
 	text-align: center;
 }
+
+
+.is-search .bar-header {
+	border-bottom: none;
+}
+
+
+
+
+/*debuging*/
+ion-side-menus{
+	max-width: 400px;
+	margin: 0 auto;
+	box-shadow: 0px 0px 0px 5px rgba(0, 0, 0, 0.2);
+} body { background-color: rgba(0, 0, 0, 0.2);  }

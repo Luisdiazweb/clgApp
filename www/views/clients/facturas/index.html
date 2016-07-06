@@ -1,0 +1,61 @@
+<ion-view view-title="Facturas">
+  
+  <ion-nav-bar align-title="center">
+    <ion-nav-back-button class="button-positive"></ion-nav-back-button>
+  </ion-nav-bar>
+
+  <ion-content>
+   <div class="spacer"></div>
+
+
+   <div class="client-details">
+    <div class="item item-divider">
+      CLIENTE: <a class="u-uppercase" href="{{ clientes.routing.cliente( clientes.actual.datos.ClienteCodigo ) }}">{{ clientes.actual.datos.ClienteNombre }}</a>
+    </div>
+   </div>
+    
+
+
+    <div class="client-reports">
+    
+    <div class="list">
+
+      <div class="item item-center" ng-show="backgroundLoading">
+        <ion-spinner></ion-spinner>
+      </div>
+
+      <a class="item item-icon-left item-report" ng-repeat="factura in clientes.actual.facturas.todas[clientes.actual.facturas.pagina_actual]" href="{{ clientes.routing.factura( factura.ClienteCodigo, factura.NumeroFactura ) }}" ng-show="!backgroundLoading">
+        <i class="icon ion-android-list"></i>
+        <span class="u-bold">#{{ factura.NumeroFactura }}</span> &nbsp; <span class="client-doubt">${{ factura.Total }}</span>
+        <span class="item-note">{{ factura.RangoPeriodo }}</span>
+      </a>
+
+
+      <!-- Paginacion -->
+      <div class="row">
+        <div class="col">
+          <a class="button button-clear button-dark" ng-click="prevPageFacturas()" ng-show="clientes.actual.facturas.pagina_actual>1">
+            <i class="icon ion-chevron-left"></i>
+            
+            Anterior
+         </a>
+        </div>
+        <div class="col text-right">
+          <a class="button button-clear button-dark" ng-click="nextPageFacturas()" ng-show="clientes.actual.facturas.todas[clientes.actual.facturas.pagina_actual].length == 10">
+            Siguiente 
+
+            <span class="inline-spinner" ng-show="backgroundLoading">
+              <ion-spinner icon="ios-small" class="spinner-dark"></ion-spinner>
+            </span>
+            <i class="icon ion-chevron-right" ng-show="!backgroundLoading"></i>
+         </a>
+        </div>
+      </div> <!-- final de paginacion -->
+    </div>
+
+    
+    </div>
+
+
+  </ion-content>
+</ion-view>
