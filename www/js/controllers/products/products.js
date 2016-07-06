@@ -1,6 +1,6 @@
 
 angular.module('clg.controllers')
-.controller('ClientsController', function($rootScope, $scope, $state, $stateParams, $timeout) {
+.controller('ProductsController', function($rootScope, $scope, $state, $stateParams, $timeout) {
 
 	$scope.check_if_synced = function(callback) {
 		$rootScope.loading();

@@ -31,7 +31,7 @@ angular.module('clg.controllers')
 	$scope.logout = function() {
 
     //Set the {App} status to loading
-    $rootScope.loading();
+    $rootScope.utils.loading();
 
     //Call the logout status changer in the database
     $scope.setUserAsLoggedOut($rootScope.user.user_id, function() {

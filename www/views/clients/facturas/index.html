@@ -20,7 +20,7 @@
     
     <div class="list">
 
-      <div class="item item-center" ng-show="backgroundLoading">
+      <div class="item item-center" ng-show="utils.backgroundLoading">
         <ion-spinner></ion-spinner>
       </div>
 
@@ -34,20 +34,20 @@
       <!-- Paginacion -->
       <div class="row">
         <div class="col">
-          <a class="button button-clear button-dark" ng-click="prevPageFacturas()" ng-show="clientes.actual.facturas.pagina_actual>1">
+          <a class="button button-clear button-dark" ng-click="prevPage()" ng-show="clientes.actual.facturas.pagina_actual>1">
             <i class="icon ion-chevron-left"></i>
             
             Anterior
          </a>
         </div>
         <div class="col text-right">
-          <a class="button button-clear button-dark" ng-click="nextPageFacturas()" ng-show="clientes.actual.facturas.todas[clientes.actual.facturas.pagina_actual].length == 10">
+          <a class="button button-clear button-dark" ng-click="nextPage()" ng-show="clientes.actual.facturas.todas[clientes.actual.facturas.pagina_actual].length == 10">
             Siguiente 
 
-            <span class="inline-spinner" ng-show="backgroundLoading">
+            <span class="inline-spinner" ng-show="utils.backgroundLoading">
               <ion-spinner icon="ios-small" class="spinner-dark"></ion-spinner>
             </span>
-            <i class="icon ion-chevron-right" ng-show="!backgroundLoading"></i>
+            <i class="icon ion-chevron-right" ng-show="!utils.backgroundLoading"></i>
          </a>
         </div>
       </div> <!-- final de paginacion -->

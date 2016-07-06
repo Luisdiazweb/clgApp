@@ -37,10 +37,10 @@
       <a class="button button-clear button-dark" ng-click="nextPage()" ng-show="clientes.todos[clientes.pagina_actual].length == 10">
         Siguiente 
 
-        <span class="inline-spinner" ng-show="backgroundLoading">
+        <span class="inline-spinner" ng-show="utils.backgroundLoading">
           <ion-spinner icon="ios-small" class="spinner-dark"></ion-spinner>
         </span>
-        <i class="icon ion-chevron-right" ng-show="!backgroundLoading"></i>
+        <i class="icon ion-chevron-right" ng-show="!utils.backgroundLoading"></i>
      </a>
     </div>
   </div> <!-- final de paginacion -->

@@ -20,7 +20,7 @@ angular.module('clg.controllers')
         $cordovaSQLite.execute($rootScope.database, query, [user.email, user.name, user.password, 0]).then(function(res) {
           successCallback.call(this, res.insertId);
     }, function (err) {
-        $rootScope.showAlert("Error", "No se pudo guardar la sesion. - " + err);
+        $rootScope.utils.showAlert("Error", "No se pudo guardar la sesion. - " + err);
     });
   }
 
@@ -47,7 +47,7 @@ angular.module('clg.controllers')
             $scope.createLocalLogin(user, successCallback, errorCallback);
         }
       }, function (err) {
-          $rootScope.showAlert("Error", "No se pudo guardar la sesion. - " + err);
+          $rootScope.utils.showAlert("Error", "No se pudo guardar la sesion. - " + err);
       });
   }
 
@@ -72,7 +72,7 @@ angular.module('clg.controllers')
 
 	
 	$scope.login = function() {
-    $rootScope.loading();
+    $rootScope.utils.loading();
 
     $http.post($rootScope.api.login_url(), "email=" + $scope.loginData.email 
       + "&password=" + $scope.loginData.password, 
@@ -80,7 +80,7 @@ angular.module('clg.controllers')
     	.then(function(response) {
 
     		if ( response.data.error ) {
-    			$rootScope.showAlert("Algo salio mal.", 
+    			$rootScope.utils.showAlert("Algo salio mal.", 
     				'Las credenciales indicadas parecen ser incorrectas. Porfavor, intenta nuevamente.');
     		} else {
     			$scope.loginSuccess(response.data, function() {
@@ -88,11 +88,11 @@ angular.module('clg.controllers')
     			});
     		}
 
-    		$rootScope.loaded();
+    		$rootScope.utils.loaded();
 
     	}, function() {
-    		$rootScope.loaded();
-    		$rootScope.showAlert("Algo salio mal.", 'El servidor no responde, porfavor intenta mas tarde.');
+    		$rootScope.utils.loaded();
+    		$rootScope.utils.showAlert("Algo salio mal.", 'El servidor no responde, porfavor intenta mas tarde.');
     	});
 
 
@@ -120,7 +120,7 @@ angular.module('clg.controllers')
   }
 
 
-  $rootScope.loading();
+  $rootScope.utils.loading();
 
   $scope.checkIfWasAuth = function() {
 
@@ -133,12 +133,12 @@ angular.module('clg.controllers')
           $rootScope.user.setLoggedAs(res);
 
           $state.go("home");
-          $rootScope.checkedAuth = true;
-          $rootScope.loaded();
+          $rootScope.utils.checkedAuth = true;
+          $rootScope.utils.loaded();
 
-          if ( $rootScope.back_to.name ) {
-            $state.go($rootScope.back_to.name, $rootScope.back_to.params);
-            $rootScope.back_to = { name: "", params: {} };
+          if ( $rootScope.utils.back_to.name ) {
+            $state.go($rootScope.utils.back_to.name, $rootScope.utils.back_to.params);
+            $rootScope.utils.back_to = { name: "", params: {} };
           }
         }, 
         function(err) {
@@ -146,7 +146,8 @@ angular.module('clg.controllers')
         });
       
     }, function( err, generator ) {
-      $rootScope.loaded();
+      //No session exists
+      $rootScope.utils.loaded();
     });
   }
 
@@ -154,7 +155,7 @@ angular.module('clg.controllers')
 
   $rootScope.$watch('deviceReady', function(isReady) {
     if ( isReady ) {
-      if ( !$rootScope.checkedAuth ) {
+      if ( !$rootScope.utils.checkedAuth ) {
         $scope.checkIfWasAuth();
       }
     }
