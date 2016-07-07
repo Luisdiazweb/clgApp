@@ -7,8 +7,6 @@ angular.module('clg.controllers')
 		$ionicSideMenuDelegate.toggleLeft();
 	}
 
-
-
 	//Start syncing all
 	$scope.syncing = {
 		current: 0,
@@ -32,8 +30,8 @@ angular.module('clg.controllers')
 
 		var _current = 0;
 		function sync_now() {
-			$rootScope.loading();
-			$rootScope.sync_index = 0;
+			$rootScope.utils.loading();
+			$rootScope.utils.sync_index = 0;
 
 			if	( _current < $scope.syncing.total ) {
 				
@@ -47,10 +45,10 @@ angular.module('clg.controllers')
 					$http.get($rootScope.sync_catalogues[_current].api_url)
 			    	.then(function(response) {
 
-			    		$rootScope.loaded();
+			    		$rootScope.utils.loaded();
 
 			    		$rootScope.sync_catalogues[_current].total_records = response.data.length;
-			    		$rootScope.sync_index = 1;
+			    		$rootScope.utils.sync_index = 1;
 
 			    		$rootScope.sync_catalogues[_current].mapping.bulk_sync(response.data, $rootScope.sync_catalogues[_current].label, 
 			    			function() {
@@ -67,20 +65,20 @@ angular.module('clg.controllers')
 
 
 			    	}, function() {
-			    		$rootScope.showAlert("Algo salio mal.", 'El servidor no responde, porfavor intenta mas tarde.');
-			    		$rootScope.loaded();
+			    		$rootScope.utils.showAlert("Algo salio mal.", 'El servidor no responde, porfavor intenta mas tarde.');
+			    		$rootScope.utils.loaded();
 
 			    		sync_now();
 			    	});
 				} else {
-					$rootScope.loaded();
+					$rootScope.utils.loaded();
 					_current++;
     			sync_now();
 				}
 
 			} else {
-				$rootScope.loaded();
-    		$rootScope.showAlert("Hecho", 'Sincronizacion realizada con exito.');
+				$rootScope.utils.loaded();
+    		$rootScope.utils.showAlert("Hecho", 'Sincronizacion realizada con exito.');
     		$state.go("sync");
 			}
 		}
@@ -108,28 +106,18 @@ angular.module('clg.controllers')
 
   $scope.checkTables = function() {
 
-  	$rootScope.loading();
+  	$rootScope.utils.loading();
 
-    $cordovaSQLite.execute($rootScope.database, 
-      "CREATE TABLE IF NOT EXISTS Cartera_Clientes (Periodo integer, Departamento text, Municipio text, NumeroFactura integer, "
-      + "Vendedor text, ClienteCodigo text, ClienteNombre text, RangoPeriodo text, TotalFactura real, "
-      + "Cantidad_Abonada real, Total real)");
-
-    $cordovaSQLite.execute($rootScope.database, 
-      "CREATE TABLE IF NOT EXISTS Maestro_Productos (TipoCodigo integer, TipoDescripcion text, ProductoCodigo text, "
-      + "Fabricante text, ProductoDescripcion text, Precio1 real, Precio2 real, Precio3 real, Precio4 real, "
-      + "Precio5 real, Existencias integer, CostoUnitario real, CostoTotal real)");
-
-    $cordovaSQLite.execute($rootScope.database, 
-      "CREATE TABLE IF NOT EXISTS syncs (id integer primary key, module text, label text, "
-      + "synced_at integer)");
+    $rootScope.Catalogos.Clientes.db.init();
+    $rootScope.Catalogos.Productos.db.init();
+    $rootScope.Catalogos.Productos.db.initSyncs();
 
     // $cordovaSQLite.execute($rootScope.database,  "DROP TABLE syncs");
 
-    $rootScope.checkedModuleTables = true;
+    $rootScope.utils.checkedModuleTables = true;
     
     $timeout(function() {
-    	$rootScope.loaded();
+    	$rootScope.utils.loaded();
     }, 500);
   }
 
@@ -151,14 +139,14 @@ angular.module('clg.controllers')
   		})(i);
   	}
 
-  	$rootScope.checkedSyncing = true;
+  	$rootScope.utils.checkedSyncing = true;
   }
 
 
 
   $rootScope.$watch('deviceReady', function(isReady) {
     if ( isReady ) {
-      if ( !$rootScope.checkedModuleTables ) {
+      if ( !$rootScope.utils.checkedModuleTables ) {
         $scope.checkTables();
       }
 

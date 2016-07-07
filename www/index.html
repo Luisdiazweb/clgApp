@@ -35,6 +35,8 @@
     <script src="js/factories/authentification.js"></script>
     <script src="js/factories/utilities.js"></script>
     <script src="js/factories/sidemenu.js"></script>
+    <script src="js/factories/homeactivities.js"></script>
+    <script src="js/factories/inventoryactivities.js"></script>
 
     <script src="js/factories/clients.js"></script>
     <script src="js/controllers/clients/index.js"></script>
@@ -43,9 +45,16 @@
     <script src="js/controllers/clients/reports/index.js"></script>
     <script src="js/controllers/clients/reports/show.js"></script>
 
+
     <script src="js/factories/products.js"></script>
-    <script src="js/controllers/products/products.js"></script>
-    <script src="js/controllers/products/search.js"></script>
+    <script src="js/controllers/inventory/index.js"></script>
+    <script src="js/controllers/inventory/products/index.js"></script>
+    <script src="js/controllers/inventory/products/show.js"></script>
+    <script src="js/controllers/inventory/marcas/index.js"></script>
+    <script src="js/controllers/inventory/marcas/show.js"></script>
+    <script src="js/controllers/inventory/categorias/index.js"></script>
+    <script src="js/controllers/inventory/categorias/show.js"></script>
+    <script src="js/controllers/inventory/search.js"></script>
 
     <script src="js/controllers/user/login.js"></script>
     <script src="js/controllers/user/logout.js"></script>
@@ -60,8 +69,8 @@
     <ion-side-menus class="content-wrapper" enable-menu-with-back-views="true" ng-class="{'content-loaded': contentLoaded}">
       <!-- Left menu -->
       <ion-side-menu side="left" ng-show="user.isLogged()">
-        <ion-header-bar class="bar-positive">
-          <h1 class="title">Configuraci&#xF3;n</h1>
+        <ion-header-bar class="bar-dark">
+          <h1 class="title">Men&uacute;</h1>
         </ion-header-bar>
         <ion-content>
           <div class="list">
@@ -71,7 +80,7 @@
       </ion-side-menu>
 
       <ion-side-menu side="left" ng-hide="user.isLogged()">
-        <ion-header-bar class="bar-positive">
+        <ion-header-bar class="bar-dark">
           <h1 class="title">Autentificaci&#xF3;n requerida</h1>
         </ion-header-bar>
         <ion-content>
@@ -83,7 +92,7 @@
 
       <ion-side-menu-content>
         
-        <ion-nav-bar align-title="center"> </ion-nav-bar>
+        <ion-nav-bar align-title="center" class="{{ utils.navBarClass }}"> </ion-nav-bar>
         
         <ion-nav-view>
         </ion-nav-view>

@@ -20,7 +20,7 @@ angular.module('clg.controllers')
 	}
 
 	$scope.showFactura = function(client, factura) {
-		$$rootScope.utils.backgroundLoading = true;
+		$rootScope.utils.backgroundLoading = true;
 
 		$rootScope.Catalogos.Clientes.factura(client, factura).then(function(res) {
 			var _factura = {};
@@ -37,7 +37,7 @@ angular.module('clg.controllers')
 			$rootScope.clientes.actual.facturas.actual = _factura;
 			$rootScope.clientes.actual.datos = _factura;
 
-			$$rootScope.utils.backgroundLoading = false;
+			$rootScope.utils.backgroundLoading = false;
 		});
 	}
 

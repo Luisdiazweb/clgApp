@@ -1,0 +1,76 @@
+<ion-view view-title="Productos">
+  
+  <ion-nav-bar align-title="center">
+    <ion-nav-back-button class="button-positive"></ion-nav-back-button>
+  </ion-nav-bar>
+
+  <ion-nav-buttons side="right">
+    <a class="button button-icon icon ion-ios-search-strong button-positive-color" href="{{ inventario.routing.search() }}"></a>
+  </ion-nav-buttons>
+
+  <ion-content>
+   <div class="spacer"></div>
+    
+  <div class="client-details">
+    <div class="item item-divider">
+      DETALLES
+    </div>
+
+    <div class="row item">
+      <div class="col u-bold">Nombre</div>
+      <div class="col col-75 u-capitalize">{{ inventario.productos.actual.ProductoDescripcion }}</div>
+    </div>
+
+    <div class="row item">
+      <div class="col u-bold">Marca</div>
+      <div class="col col-75 u-capitalize"><a href="{{ inventario.routing.marca( inventario.productos.actual.Fabricante ) }}">{{ inventario.productos.actual.Fabricante }}</a></div>
+    </div>
+
+    <div class="row item">
+      <div class="col u-bold">Categoria</div>
+      <div class="col col-75 u-capitalize"><a href="{{ inventario.routing.categoria( inventario.productos.actual.TipoCodigo ) }}">{{ inventario.productos.actual.TipoDescripcion }}</a></div>
+    </div>
+
+    <div class="row item">
+      <div class="col u-bold">Precio 1</div>
+      <div class="col u-capitalize">${{ inventario.productos.actual.Precio1 }}</div>
+
+      <div class="col u-bold">Precio 2</div>
+      <div class="col u-capitalize">${{ inventario.productos.actual.Precio2 }}</div>
+    </div>
+
+    <div class="row item">
+      <div class="col u-bold">Precio 3</div>
+      <div class="col u-capitalize">${{ inventario.productos.actual.Precio3 }}</div>
+
+      <div class="col u-bold">Precio 4</div>
+      <div class="col u-capitalize">${{ inventario.productos.actual.Precio4 }}</div>
+    </div>
+
+    <div class="row item">
+      <div class="col u-bold">Precio 5</div>
+      <div class="col col-75 u-capitalize">${{ inventario.productos.actual.Precio5 }}</div>
+    </div>
+
+    <div class="row item">
+      <div class="col u-bold">Existencias</div>
+      <div class="col col-75 u-capitalize">{{ inventario.productos.actual.Existencias }}</div>
+    </div>
+
+    <div class="row item">
+      <div class="col u-bold">Costo Unidad</div>
+      <div class="col col-75 u-capitalize">${{ inventario.productos.actual.CostoUnitario }}</div>
+    </div>
+
+    <div class="row item">
+      <div class="col u-bold">Total</div>
+      <div class="col col-75 u-capitalize">${{ inventario.productos.actual.CostoTotal }}</div>
+    </div>
+
+
+
+  </div>
+
+
+  </ion-content>
+</ion-view>

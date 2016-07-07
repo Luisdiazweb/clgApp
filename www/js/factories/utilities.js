@@ -12,6 +12,8 @@ angular.module('clg.factories')
 	  this.back_to = { name: "", params: {} };
 	  this.backgroundLoading = false;
 
+	  this.navBarClass = 'bar-light';
+
 	  //define a server error when endpoints fails
 	  this.showAlert = function(title, message) {
 

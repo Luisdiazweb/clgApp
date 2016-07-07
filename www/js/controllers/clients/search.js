@@ -1,6 +1,6 @@
 
 angular.module('clg.controllers')
-.controller('ClientsSearchController', function($rootScope, $scope, $state, $stateParams, $timeout) {
+.controller('ClientsSearch', function($rootScope, $scope, $state, $stateParams, $timeout) {
 
 
 	$scope.backgroundLoading = false;

@@ -51,6 +51,55 @@ angular.module('clg.config')
     })
 
 
+    .state('inventario', {
+      url: "/inventario",
+      controller: "Inventory",
+      templateUrl: 'views/inventario/index.html'
+    })
+
+    .state('inventario_busqueda', {
+      url: "/inventario/buscar",
+      controller: "InventorySearch",
+      templateUrl: 'views/inventario/search.html'
+    })
+
+    .state('productos', {
+      url: "/productos",
+      controller: "Products",
+      templateUrl: 'views/inventario/productos/index.html'
+    })
+
+    .state('productos_detalle', {
+      url: "/productos/producto/:id",
+      controller: "ProductDetails",
+      templateUrl: 'views/inventario/productos/show.html'
+    })
+
+    .state('marcas', {
+      url: "/marcas",
+      controller: "Trademarks",
+      templateUrl: 'views/inventario/marcas/index.html'
+    })
+
+    .state('marcas_detalle', {
+      url: "/marcas/marca/:id",
+      controller: "TrademarkDetails",
+      templateUrl: 'views/inventario/marcas/show.html'
+    })
+
+    .state('categorias', {
+      url: "/categorias",
+      controller: "Categories",
+      templateUrl: 'views/inventario/categorias/index.html'
+    })
+
+    .state('categorias_detalle', {
+      url: "/categorias/categoria/:id",
+      controller: "CategoryDetails",
+      templateUrl: 'views/inventario/categorias/show.html'
+    })
+
+
     .state('sync', {
       url: "/sync",
       controller: "SyncController",
@@ -65,8 +114,6 @@ angular.module('clg.config')
 
 
   $urlRouterProvider.otherwise('/');
-
-
 
 
 

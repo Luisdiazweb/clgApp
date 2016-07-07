@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"inven",
+				"Inventory"
+			],
+			[
+				"home",
+				"HomeActivities"
+			],
+			[
+				"Product",
+				"ProductsFactory"
+			],
+			[
+				"search",
+				"searchQuery"
+			],
+			[
 				"show",
 				"showFacturas"
 			],
@@ -180,26 +196,10 @@
 	"buffers":
 	[
 		{
-			"file": "www/index.html",
-			"settings":
-			{
-				"buffer_size": 2851,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "www/js/controllers/MainController.js",
 			"settings":
 			{
-				"buffer_size": 4689,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "www/js/controllers/LoginController.js",
-			"settings":
-			{
-				"buffer_size": 4846,
+				"buffer_size": 4015,
 				"line_ending": "Windows"
 			}
 		},
@@ -207,7 +207,47 @@
 			"file": "www/js/routes.js",
 			"settings":
 			{
-				"buffer_size": 1557,
+				"buffer_size": 2989,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "www/js/controllers/inventory/search.js",
+			"settings":
+			{
+				"buffer_size": 2429,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "www/views/inventario/search.html",
+			"settings":
+			{
+				"buffer_size": 2157,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "www/views/inventario/index.html",
+			"settings":
+			{
+				"buffer_size": 713,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "www/js/factories/utilities.js",
+			"settings":
+			{
+				"buffer_size": 1270,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "www/js/factories/products.js",
+			"settings":
+			{
+				"buffer_size": 8101,
 				"line_ending": "Windows"
 			}
 		},
@@ -215,64 +255,8 @@
 			"file": "www/css/style.css",
 			"settings":
 			{
-				"buffer_size": 2196,
+				"buffer_size": 3907,
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "www/js/factories/ClientsFactory.js",
-			"settings":
-			{
-				"buffer_size": 4328,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "www/js/controllers/ClientsController.js",
-			"settings":
-			{
-				"buffer_size": 6775,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "www/views/clients.html",
-			"settings":
-			{
-				"buffer_size": 1540,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "www/views/clients.details.html",
-			"settings":
-			{
-				"buffer_size": 2131,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "www/views/clients.facturas.details.html",
-			"settings":
-			{
-				"buffer_size": 2082,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "www/views/clients.facturas.html",
-			"settings":
-			{
-				"buffer_size": 2048,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "www/js/app.js",
-			"settings":
-			{
-				"buffer_size": 1854,
-				"line_ending": "Unix"
 			}
 		}
 	],
@@ -284,7 +268,7 @@
 	"command_palette":
 	{
 		"height": 92.0,
-		"last_filter": "gulp last",
+		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -337,32 +321,86 @@
 		"/E/httpdocs/clg-app/www/css",
 		"/E/httpdocs/clg-app/www/js",
 		"/E/httpdocs/clg-app/www/js/controllers",
+		"/E/httpdocs/clg-app/www/js/controllers/clients",
+		"/E/httpdocs/clg-app/www/js/controllers/clients/reports",
+		"/E/httpdocs/clg-app/www/js/controllers/inventory",
+		"/E/httpdocs/clg-app/www/js/controllers/inventory/categorias",
+		"/E/httpdocs/clg-app/www/js/controllers/inventory/marcas",
+		"/E/httpdocs/clg-app/www/js/controllers/user",
 		"/E/httpdocs/clg-app/www/js/factories",
-		"/E/httpdocs/clg-app/www/views"
+		"/E/httpdocs/clg-app/www/views",
+		"/E/httpdocs/clg-app/www/views/clients",
+		"/E/httpdocs/clg-app/www/views/clients/facturas",
+		"/E/httpdocs/clg-app/www/views/inventario",
+		"/E/httpdocs/clg-app/www/views/inventario/categorias",
+		"/E/httpdocs/clg-app/www/views/inventario/marcas",
+		"/E/httpdocs/clg-app/www/views/inventario/productos"
 	],
 	"file_history":
 	[
+		"/E/httpdocs/clg-app/www/views/inventario/categorias/show.html",
+		"/E/httpdocs/clg-app/www/js/controllers/inventory/categorias/show.js",
+		"/E/httpdocs/clg-app/www/js/controllers/inventory/marcas/show.js",
+		"/E/httpdocs/clg-app/www/js/controllers/inventory/categorias/index.js",
+		"/E/httpdocs/clg-app/www/views/inventario/categorias/index.html",
+		"/E/httpdocs/clg-app/www/views/inventario/marcas/index.html",
+		"/E/httpdocs/clg-app/www/js/controllers/inventory/products/show.js",
+		"/E/httpdocs/clg-app/www/js/controllers/inventory/products/index.js",
+		"/E/httpdocs/clg-app/www/js/controllers/inventory/marcas/index.js",
+		"/E/httpdocs/clg-app/www/index.html",
+		"/E/httpdocs/clg-app/www/views/inventario/marcas/show.html",
+		"/E/httpdocs/clg-app/www/views/inventario/productos/show.html",
+		"/E/httpdocs/clg-app/www/views/clients/search.html",
+		"/E/httpdocs/clg-app/www/views/clients/facturas/show.html",
+		"/E/httpdocs/clg-app/www/views/clients/facturas/index.html",
+		"/E/httpdocs/clg-app/www/views/clients/index.html",
+		"/E/httpdocs/clg-app/www/views/clients/show.html",
+		"/E/httpdocs/clg-app/www/views/home.html",
+		"/E/httpdocs/clg-app/www/views/login.html",
+		"/E/httpdocs/clg-app/www/js/controllers/clients/reports/show.js",
+		"/E/httpdocs/clg-app/www/views/inventario/productos/index.html",
+		"/E/httpdocs/clg-app/www/js/controllers/clients/index.js",
+		"/E/httpdocs/clg-app/www/js/factories/inventoryactivities.js",
+		"/E/httpdocs/clg-app/www/views/inventory/index.html",
+		"/E/httpdocs/clg-app/www/js/controllers/inventory/inventory.js",
+		"/E/httpdocs/clg-app/www/js/routes.js",
+		"/E/httpdocs/clg-app/www/js/controllers/HomeController.js",
+		"/E/httpdocs/clg-app/www/js/factories/homeactivities.js",
+		"/E/httpdocs/clg-app/www/js/controllers/SyncController.js",
+		"/E/httpdocs/clg-app/www/js/controllers/clients/search.js",
+		"/E/httpdocs/clg-app/www/js/controllers/user/login.js",
+		"/E/httpdocs/clg-app/www/js/controllers/user/logout.js",
+		"/E/httpdocs/clg-app/www/js/factories/authentification.js",
+		"/E/httpdocs/clg-app/www/js/controllers/LoginController.js",
+		"/E/httpdocs/clg-app/www/js/controllers/clients/show.js",
+		"/E/httpdocs/clg-app/www/js/controllers/clients/reports/index.js",
+		"/E/httpdocs/clg-app/www/js/app.js",
+		"/E/httpdocs/clg-app/www/js/factories/sidemenu.js",
+		"/E/httpdocs/clg-app/www/js/factories/utilities.js",
+		"/E/httpdocs/clg-app/www/js/controllers/products/search.js",
+		"/E/httpdocs/clg-app/www/js/controllers/products/products.js",
+		"/E/httpdocs/clg-app/www/js/factories/products.js",
+		"/E/httpdocs/nuu/christian-school/src/styles/_config.scss",
+		"/E/httpdocs/nuu/christian-school/src/styles/_utils.scss",
+		"/E/httpdocs/nuu/christian-school/src/styles/_fonts.scss",
+		"/E/httpdocs/clg-app/www/js/factories/ClientsFactory.js",
+		"/E/httpdocs/clg-app/www/js/controllers/ClientsController.js",
+		"/E/httpdocs/clg-app/www/views/clients.facturas.html",
+		"/E/httpdocs/clg-app/www/views/clients.facturas.details.html",
+		"/E/httpdocs/clg-app/www/views/clients.details.html",
+		"/E/httpdocs/clg-app/www/views/clients.html",
 		"/E/httpdocs/clg-app/www/views/clients.popover.html",
 		"/C/Users/jadiel/AppData/Local/Temp/scp31811/public_html/pinedajay/default.html",
 		"/E/httpdocs/clg-app/www/views/sync.start.html",
 		"/E/httpdocs/clg-app/www/views/sync.html",
-		"/E/httpdocs/clg-app/www/js/controllers/SyncController.js",
-		"/E/httpdocs/clg-app/www/js/controllers/LoginController.js",
 		"/E/httpdocs/clg-app/.gitignore",
 		"/E/httpdocs/clg-app/platforms/platforms.json",
 		"/E/httpdocs/clg-app/www/css/style.css",
-		"/E/httpdocs/clg-app/www/js/routes.js",
 		"/E/httpdocs/clg-app/www/js/run.js",
 		"/E/httpdocs/clg-app/www/lib/biu/src/jade/index.jade",
-		"/E/httpdocs/clg-app/www/js/app.js",
-		"/E/httpdocs/clg-app/www/js/controllers/ClientsController.js",
 		"/E/httpdocs/clg-app/www/js/controllers/LogoutController.js",
 		"/E/httpdocs/clg-app/endpoints/user_login.php",
 		"/E/httpdocs/clg-app/www/js/controllers/MainController.js",
-		"/E/httpdocs/clg-app/www/views/login.html",
-		"/E/httpdocs/clg-app/www/js/factories/ClientsFactory.js",
-		"/E/httpdocs/clg-app/www/views/home.html",
-		"/E/httpdocs/clg-app/www/views/clients.html",
 		"/E/httpdocs/clg-app/www/lib/biu/node_modules/xo/node_modules/babel-eslint/node_modules/babel-types/node_modules/lodash/_assignInDefaults.js",
 		"/E/httpdocs/clg-app/www/lib/biu/dist/biu.cjs.js",
 		"/E/httpdocs/clg-app/www/lib/biu/.bower.json",
@@ -372,10 +410,8 @@
 		"/E/httpdocs/clg-app/bower.json",
 		"/C/Users/jadiel/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/E/httpdocs/clg-app/www/js/factories/AuthManager.js",
-		"/E/httpdocs/clg-app/www/index.html",
 		"/E/httpdocs/clg-app/endpoints/api_config.php",
 		"/E/httpdocs/clg-app/endpoints/user_login.json",
-		"/E/httpdocs/clg-app/www/js/controllers/HomeController.js",
 		"/E/httpdocs/clg-app/endpoints/user_login_error.json",
 		"/E/httpdocs/clg-app/endpoints/clients.php",
 		"/E/httpdocs/clg-app/endpoints/products.php",
@@ -429,9 +465,7 @@
 		"/C/Users/jadiel/AppData/Local/Temp/scp40691/html/dev/wp-content/themes/wp_charity/framework/abstract.php",
 		"/E/design/dccolorweb/elpiche/video-gallery.js",
 		"/C/Users/jadiel/AppData/Roaming/Skype/My Skype Received Files/wp-config.php",
-		"/C/Users/jadiel/Downloads/comiteacutesalvadorentildeoelpiche.wordpress.2016-06-22.xml",
-		"/E/httpdocs/nuu/mora-state/bower_components/videojs-vimeo/src/Vimeo.js",
-		"/C/ProgramData/NVIDIA Corporation/NetService/NSManagedTasks.xml"
+		"/C/Users/jadiel/Downloads/comiteacutesalvadorentildeoelpiche.wordpress.2016-06-22.xml"
 	],
 	"find":
 	{
@@ -449,6 +483,17 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"{{ utils.navBarColor }}",
+			"injectClient",
+			"showFactura",
+			"showFacturas",
+			"showClient",
+			"$state",
+			".status",
+			"$scope.backgroundLoading",
+			"check_if_synced",
+			"showClients",
+			"$scope.clientes",
 			"facturas",
 			"fetchFacturasPaginated",
 			"showFactura",
@@ -503,6 +548,11 @@
 		"regex": false,
 		"replace_history":
 		[
+			"positive",
+			"injectProduct",
+			".utils",
+			"$rootScope.backgroundLoading",
+			"$rootScope.clientes",
 			"$rootScope.sync_catalogues",
 			""
 		],
@@ -515,24 +565,114 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "www/index.html",
+					"file": "www/js/controllers/MainController.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2851,
+						"buffer_size": 4015,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								744,
-								744
+								3264,
+								3264
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1698.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "www/js/routes.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2989,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1449,
+								1449
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 348.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "www/js/controllers/inventory/search.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2429,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								423,
+								423
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "www/views/inventario/search.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2157,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								814,
+								814
 							]
 						],
 						"settings":
@@ -540,153 +680,6 @@
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 44.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "www/js/controllers/MainController.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4689,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4627,
-								4627
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2799.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "www/js/controllers/LoginController.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4846,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4495,
-								4495
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1771.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "www/js/routes.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1557,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								839,
-								839
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 215.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "www/css/style.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2196,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2191,
-								2191
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1841.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "www/js/factories/ClientsFactory.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4328,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								773,
-								773
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -696,176 +689,25 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "www/js/controllers/ClientsController.js",
+					"buffer": 4,
+					"file": "www/views/inventario/index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6775,
+						"buffer_size": 713,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								623,
-								623
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 103.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "www/views/clients.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1540,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1510,
-								769
+								302,
+								302
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 174.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "www/views/clients.details.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2131,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								403,
-								403
-							]
-						],
-						"settings":
-						{
-							"open_with_edit": true,
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 100.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "www/views/clients.facturas.details.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2082,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1137,
-								1137
-							]
-						],
-						"settings":
-						{
-							"open_with_edit": true,
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 421.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "www/views/clients.facturas.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2048,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1367,
-								1367
-							]
-						],
-						"settings":
-						{
-							"open_with_edit": true,
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 310.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "www/js/app.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1854,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								381,
-								381
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
@@ -873,7 +715,96 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "www/js/factories/utilities.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1270,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								630,
+								630
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "www/js/factories/products.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8101,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								833,
+								833
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 314.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "www/css/style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3907,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3410,
+								3410
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2591.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
 					"type": "text"
 				}
 			]
@@ -922,7 +853,7 @@
 	"project": "clg-app.sublime-project",
 	"replace":
 	{
-		"height": 46.0
+		"height": 114.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -931,6 +862,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"index",
+				"www\\index.html"
+			],
 			[
 				"login",
 				"www\\js\\controllers\\LoginController.js"
@@ -954,10 +889,6 @@
 			[
 				"inde",
 				"www\\lib\\biu\\node_modules\\xo\\node_modules\\babel-eslint\\node_modules\\babel-types\\node_modules\\lodash\\_assignInDefaults.js"
-			],
-			[
-				"index",
-				"www\\index.html"
 			],
 			[
 				"authman",

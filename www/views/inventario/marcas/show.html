@@ -1,0 +1,57 @@
+<ion-view view-title="Productos">
+  
+  <ion-nav-bar align-title="center">
+    <ion-nav-back-button class="button-positive"></ion-nav-back-button>
+  </ion-nav-bar>
+
+  <ion-nav-buttons side="right">
+    <a class="button button-icon icon ion-ios-search-strong button-positive-color" href="{{ inventario.routing.search() }}"></a>
+  </ion-nav-buttons>
+
+  <ion-header-bar class="bar bar-subheader item-input-inset" align-title="center">
+   <h2 class="subtitle title">MARCA: <span class="u-uppercase">{{ inventario.marcas.actual.Fabricante }}</span></h2>
+</ion-header-bar>
+
+  <ion-content>
+   <div class="spacer"></div>
+
+
+  <div class="list">
+
+    <a class="item item-client" ng-repeat="item in inventario.marcas.productos.resultados[inventario.marcas.productos.pagina_actual]"  href="{{ inventario.routing.producto( item.ProductoCodigo ) }}">
+      <span class="item-note">{{ item.ProductoCodigo }}</span>
+
+      <h2 class="u-capitalize u-bold">{{ item.ProductoDescripcion }}</h2>
+      <p class="u-capitalize">{{ item.Fabricante }} &mdash; {{ item.TipoDescripcion }}</p>
+    </a>
+
+
+  </div>
+  
+
+  <!-- Paginacion -->
+  <div class="row">
+    <div class="col">
+      <a class="button button-clear button-dark" ng-click="prevPage()" ng-show="inventario.marcas.productos.pagina_actual>1">
+        <i class="icon ion-chevron-left"></i>
+        
+        Anterior
+     </a>
+    </div>
+    <div class="col text-right">
+      <a class="button button-clear button-dark" ng-click="nextPage()" ng-show="inventario.marcas.productos.resultados[inventario.marcas.productos.pagina_actual].length == 10">
+        Siguiente 
+
+        <span class="inline-spinner" ng-show="utils.backgroundLoading">
+          <ion-spinner icon="ios-small" class="spinner-dark"></ion-spinner>
+        </span>
+        <i class="icon ion-chevron-right" ng-show="!utils.backgroundLoading"></i>
+     </a>
+    </div>
+  </div> <!-- final de paginacion -->
+
+
+
+
+  </ion-content>
+</ion-view>

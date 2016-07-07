@@ -1,12 +1,14 @@
 
 angular.module('clg.controllers')
 .controller('MainController', function($scope, $rootScope, $state, $ionicSideMenuDelegate, $cordovaLocalNotification, 
-  $timeout, $cordovaSQLite, ClientsFactory, ProductsFactory, AuthManager, Utilities, SideMenu) {
+  $timeout, $cordovaSQLite, ClientsFactory, ProductsFactory, AuthManager, Utilities, SideMenu, HomeActivities, 
+  InventoryActivities) {
 
   $scope.contentLoaded = true;
 
   $rootScope.utils = Utilities;
   $rootScope.clientes = ClientsFactory.caching;
+  $rootScope.inventario = ProductsFactory.caching;
 
   //Define api endpoints
   $rootScope.api = {
@@ -30,8 +32,10 @@ angular.module('clg.controllers')
     $ionicSideMenuDelegate.toggleLeft();
   };
 
-  //left menu items
-  $scope.SideMenu = SideMenu;
+  //menu items
+  $rootScope.SideMenu = SideMenu;
+  $rootScope.homeActivities = HomeActivities;
+  $rootScope.inventoryActivities = InventoryActivities;
 
   //Manage user session
   $rootScope.user = AuthManager;
@@ -113,9 +117,13 @@ angular.module('clg.controllers')
       $ionicSideMenuDelegate.toggleLeft();
     }
 
-    angular.element(document.body).removeClass("is-search");
-    if ( toState.name == "clientes_busqueda" ) {
-      angular.element(document.body).addClass("is-search");
+    angular.element(document.body).removeClass("is-search is-subheader");
+    
+    if ( toState.name == "clientes_busqueda" 
+      || toState.name == "marcas_detalle"
+      || toState.name == "inventario_busqueda"
+      || toState.name == "categorias_detalle" ) {
+      angular.element(document.body).addClass("is-search is-subheader");
     }
 
     if ( toState.name == "logout" && !$rootScope.user.isLogged() ) {
