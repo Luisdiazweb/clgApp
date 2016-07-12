@@ -140,15 +140,88 @@ angular.module('clg.factories')
 			}
 		},
 
-		search: function(search_query, num) {
+
+		fetchTrademarks: function() {
+			var query = "SELECT DISTINCT Fabricante FROM Maestro_Productos";
+      return $cordovaSQLite.execute($rootScope.database, query, []);
+		},
+
+		fetchCategories: function() {
+			var query = "SELECT DISTINCT TipoCodigo, TipoDescripcion FROM Maestro_Productos";
+      return $cordovaSQLite.execute($rootScope.database, query, []);
+		},
+
+		search: function(search_query, filters, num) {
 			var limit = 0;
 			if ( num != undefined && num > 0 ) {
 				num = num - 1;
 				limit = (num*10) + ",10"
 			}
 
-			var query = "SELECT * FROM Maestro_Productos WHERE ClienteNombre LIKE ? GROUP BY ClienteCodigo limit " + limit;
+			var filterBy = "ProductoDescripcion";
+			var filterByValue = '';
+			var hasFilter = false;
+			var select = '*';
+
+			var extraFilter = '';
+			var argumentNumber = 1;
+
+			if ( typeof filters === "object" ) {
+
+				switch (filters.filterBy) {
+					case 'trademarks':
+						filterBy = 'Fabricante';
+						select = "DISTINCT Fabricante";
+						hasFilter = true;
+						break;
+					case 'categories':
+						filterBy = 'TipoDescripcion';
+						select = "DISTINCT TipoDescripcion, TipoCodigo";
+						hasFilter = true;
+						break;
+					default:
+						filterBy = 'ProductoDescripcion';
+						select = '*';
+
+						if ( filters.filter.categories.length ) {
+							extraFilter = ' AND TipoDescripcion LIKE ?';
+							argumentNumber = 2;
+						} else if ( filters.filter.trademarks.length ) {
+							extraFilter = ' AND Fabricante LIKE ?';
+							argumentNumber = 3;
+						} else if ( filters.filter.categories.length && filters.filter.trademarks.length ) {
+							extraFilter = ' AND TipoDescripcion LIKE ? AND Fabricante LIKE ?';
+							argumentNumber = 3;
+						}
+
+						break;
+				}
+
+			}
+
+			var query = "SELECT " + select + " FROM Maestro_Productos WHERE " + filterBy + " LIKE ?" + extraFilter + " limit " + limit;
+
+			// console.log(query, argumentNumber);
+
+      if ( filterBy == 'ProductoDescripcion' ) {
+      	if ( argumentNumber == 2 ) {
+	      	return $cordovaSQLite.execute($rootScope.database, query, ['%' + search_query + '%', '%' + filters.filter.categories + '%']);
+	      }
+	      
+	      if ( argumentNumber == 3 ) {
+	      	return $cordovaSQLite.execute($rootScope.database, query, 
+	      		['%' + search_query + '%', '%' + filters.filter.trademarks + '%']);
+	      }
+
+	      if ( argumentNumber == 4 ) {
+	      	return $cordovaSQLite.execute($rootScope.database, query, 
+	      		['%' + search_query + '%', '%' + filters.filter.categories + '%', '%' + filters.filter.trademarks + '%']);
+	      }
+      }
+
       return $cordovaSQLite.execute($rootScope.database, query, ['%' + search_query + '%']);
+
+
 		},
 
 

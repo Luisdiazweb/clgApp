@@ -1,0 +1,33 @@
+<ion-modal-view>
+  <ion-header-bar class="bar bar-header" align-title="center">
+    <h1 class="title" ng-show="!user.isLogged()">Acceder</h1>
+    <h1 class="title" ng-show="user.isLogged()">Refrescando</h1>
+  </ion-header-bar>
+  <ion-content class="padding">
+    
+    <div ng-show="!utils.isLoading && !user.isLogged()">
+
+      <h2 class="title text-center">Entrar</h2>
+      <div class="list list-inset">
+        <label class="item item-input">
+          <input type="text" placeholder="Correo" ng-model="loginmanager.loginData.email" >
+        </label>
+        <label class="item item-input">
+          <input type="password" placeholder="Clave de usuario"  ng-model="loginmanager.loginData.password" >
+        </label>
+        
+        <button class="button button-block" ng-click="loginmanager.login()" ng-class="{'button-positive': loginmanager.loginData.email&&loginmanager.loginData.password, 'button-dark': !loginmanager.loginData.email||!loginmanager.loginData.password}">
+          Iniciar Sesion
+        </button>
+      </div>
+      <div class="spacer"></div>
+
+    </div>
+    <div ng-show="utils.isLoading || user.isLogged()" class="text-center">
+      <div class="spacer"></div>
+      <ion-spinner></ion-spinner>
+      <div class="spacer"></div>
+    </div>
+
+  </ion-content>
+</ion-modal-view>

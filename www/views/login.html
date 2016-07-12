@@ -4,14 +4,14 @@
     <h2 class="title text-center">Entrar</h2>
     <div class="list list-inset">
       <label class="item item-input">
-        <input type="text" placeholder="Correo" ng-model="loginData.email" >
+        <input type="text" placeholder="Correo" ng-model="loginmanager.loginData.email" >
       </label>
       <label class="item item-input">
-        <input type="password" placeholder="Clave de usuario"  ng-model="loginData.password" >
+        <input type="password" placeholder="Clave de usuario"  ng-model="loginmanager.loginData.password" >
       </label>
       
-      <button class="button button-block button-positive" ng-click="login()">
-        Verificar datos
+      <button class="button button-block" ng-click="loginmanager.login()" ng-class="{'button-positive': loginmanager.loginData.email&&loginmanager.loginData.password, 'button-dark': !loginmanager.loginData.email||!loginmanager.loginData.password}">
+        Iniciar Sesion
       </button>
     </div>
   </ion-content>

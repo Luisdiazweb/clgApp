@@ -193,6 +193,10 @@
 	border-bottom: none;
 }
 
+.is-search .popover{
+	height: 185px;
+}
+
 .search-placeholder{
 	width: 30px;
 	text-align: center;
@@ -213,6 +217,80 @@
 	color: #777;
 }
 
+.platform-ios .popover .scroll-content {
+    margin: 0px 0;
+}
+
+
+
+.chips-list{
+	display: block;
+	padding: 10px 15px;
+}
+
+.chips-list .chips-title{
+	font-size: 14px;
+	color: #777;
+	float: left;
+}
+
+.chips-list ul {
+	float: left;
+	list-style: none;
+	font-size: 0px;
+}
+
+.chips-list ul li{
+	display: inline-block;
+	vertical-align: middle;
+	padding: 5px 10px;
+	background-color: #3c8bca;
+	color: #d1dfea;
+	font-size: 12px;
+	text-transform: uppercase;
+	border-radius: 15px;
+	margin-left: 5px;
+	line-height: 15px;
+	cursor: pointer;
+}
+
+.chips-list ul li:active{
+	background-color: #6babde;
+}
+
+.chips-list ul li span {
+	line-height: 15px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.chips-list ul li a {
+	text-decoration: none;
+	color: #fff;
+	font-size: 20px;
+	display: inline-block;
+	vertical-align: top;
+	line-height: 15px;
+}
+
+
+.filters-row{
+	padding: 0;
+}
+
+.item-select select{
+  padding: 0 30px 0 5px;
+}
+
+.item-select .input-label{
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+
+.list-inset {
+	background-color: transparent;
+}
 
 
 /*debuging*/

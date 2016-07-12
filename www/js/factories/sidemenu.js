@@ -8,15 +8,15 @@ angular.module('clg.factories')
       url: "#/clientes"
     },
     {
-      title: "Products",
-      url: "#/products"
+      title: "Inventario",
+      url: "#/inventario"
     },
     {
       title: "Sincronizacion",
       url: "#/sync"
     },
     {
-      title: "Salir",
+      title: "Cerrar sesion",
       url: "#/logout"
     }
   ];

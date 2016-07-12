@@ -6,14 +6,14 @@
 
   <ion-header-bar class="bar bar-subheader item-input-inset {{ utils.navBarClass }}">
      <label class="item-input-wrapper">
-        <i class="icon ion-ios-search placeholder-icon search-placeholder" ng-show="!backgroundLoading"></i>
-        <span class="inline-spinner" ng-show="backgroundLoading">
+        <i class="icon ion-ios-search placeholder-icon search-placeholder" ng-show="!utils.backgroundLoading"></i>
+        <span class="inline-spinner" ng-show="utils.backgroundLoading">
           <ion-spinner icon="ios-small"></ion-spinner>
         </span>
-        <input type="search" placeholder="Search" ng-model="searchQuery">
+        <input type="search" placeholder="Buscar" ng-model="searchQuery">
       </label>
       <button class="button button-clear button-positive" ng-show="searchQuery.length" ng-click="searchQuery=''; clientes.busqueda.resultados = {};">
-        Cancel
+        Cancelar
       </button>
   </ion-header-bar>
 

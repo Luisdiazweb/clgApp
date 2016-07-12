@@ -64,11 +64,17 @@ angular.module('clg.controllers')
 			    		);
 
 
-			    	}, function() {
-			    		$rootScope.utils.showAlert("Algo salio mal.", 'El servidor no responde, porfavor intenta mas tarde.');
+			    	}, function(err) {
+			    		$rootScope.utils.showAlert("Algo salio mal.", 'El servidor no responde, probablemente se deba a un problema de red. '
+			    			+ 'Porfavor intenta mas tarde.');
 			    		$rootScope.utils.loaded();
 
-			    		sync_now();
+			    		if ( err.status < 0 ) {
+			    			$rootScope.online = false;
+			    		}
+
+			    		// sync_now();
+			    		$state.go("sync");
 			    	});
 				} else {
 					$rootScope.utils.loaded();
@@ -94,7 +100,13 @@ angular.module('clg.controllers')
 
 
 	if ( $state.current.name === "sync_start" ) {
-		$scope.syncAll();
+		if ( $rootScope.online ) {
+			$scope.syncAll();
+		} else {
+			$rootScope.utils.showAlert('Notificacion de red', 
+				'No se puede realizar esta accion debido a que no se detecto conexion de red.');
+			$state.go('sync');
+		}
 	}
 
 

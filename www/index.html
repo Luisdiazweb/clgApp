@@ -33,6 +33,7 @@
     <script src="js/routes.js"></script>
     
     <script src="js/factories/authentification.js"></script>
+    <script src="js/factories/login.js"></script>
     <script src="js/factories/utilities.js"></script>
     <script src="js/factories/sidemenu.js"></script>
     <script src="js/factories/homeactivities.js"></script>
@@ -66,11 +67,11 @@
 
   <body ng-app="clg" ng-controller="MainController as logic">
 
-    <ion-side-menus class="content-wrapper" enable-menu-with-back-views="true" ng-class="{'content-loaded': contentLoaded}">
+    <ion-side-menus class="content-wrapper" enable-menu-with-back-views="true" ng-class="{&apos;content-loaded&apos;: contentLoaded}">
       <!-- Left menu -->
       <ion-side-menu side="left" ng-show="user.isLogged()">
         <ion-header-bar class="bar-dark">
-          <h1 class="title">Men&uacute;</h1>
+          <h1 class="title">Men&#xFA;</h1>
         </ion-header-bar>
         <ion-content>
           <div class="list">

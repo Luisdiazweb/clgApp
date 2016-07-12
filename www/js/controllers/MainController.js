@@ -2,7 +2,7 @@
 angular.module('clg.controllers')
 .controller('MainController', function($scope, $rootScope, $state, $ionicSideMenuDelegate, $cordovaLocalNotification, 
   $timeout, $cordovaSQLite, ClientsFactory, ProductsFactory, AuthManager, Utilities, SideMenu, HomeActivities, 
-  InventoryActivities) {
+  InventoryActivities, $http, $ionicModal, LoginManager) {
 
   $scope.contentLoaded = true;
 
@@ -80,6 +80,40 @@ angular.module('clg.controllers')
       Date.now = function() { return new Date().getTime(); }
   }
 
+  $rootScope.loginmodal;
+
+  //modal login
+  $ionicModal.fromTemplateUrl('views/modallogin.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $rootScope.loginmodal = modal;
+  });
+
+
+
+
+  $rootScope.loginmanager = new LoginManager($rootScope);
+
+
+
+
+
+
+  $scope.readyQueue = [];
+
+  $scope.listenAction = function(test) {
+    // console.log('listening action');
+    $timeout(function() {
+      if ( !test.call(this) ) {
+        $scope.listenAction.call(this, test);
+      } else {
+        // console.log('action is ok');
+      }
+    }, 100);
+  }
+
+
+
 
   //stored avriable for last online status
   $rootScope.last_was_online = true;
@@ -87,7 +121,18 @@ angular.module('clg.controllers')
   $scope.$watch('deviceReady', function(isReady) {
     if ( isReady ) {
       if ( !$rootScope.online ) {
-        biu("Your device has not data conection right now, the app will run in offline mode.", {type: 'danger'});
+        biu("No se ha detectado conexion de red, la aplicacion cambiara a modo offline.", {type: 'danger'});
+      }
+
+      $http.get('http://dccolorweb.com/experiments/clg/endpoints/user_login.php').then(function() {
+        $rootScope.online = true;
+      }, function() {
+        $rootScope.online = false;
+      });
+
+
+      for (var i = 0; i < $scope.readyQueue.length; i++) {
+        $scope.readyQueue[i].call(this);
       }
     }
   });
@@ -100,9 +145,9 @@ angular.module('clg.controllers')
     }
 
     if ( newStatus == false ) {
-      biu("Your device has not data conection right now, the app will run in offline mode.", {type: 'danger'});
+      biu("No se ha detectado conexion de red, la aplicacion cambiara a modo offline.", {type: 'danger'});
     } else {
-      biu("Data conection detected, online mode is on.", {type: 'success'});
+      biu("Conexion detectada, modo offline apagado.", {type: 'success'});
     }
 
     $rootScope.last_was_online = newStatus;
@@ -113,8 +158,33 @@ angular.module('clg.controllers')
   function(event, toState, toParams, fromState, fromParams, options){ 
   	var cancel = false;
 
+    function showLoginModal() {
+      $scope.listenAction(function() {
+        if ( $rootScope.loginmodal ) {
+          $rootScope.loginmodal.show();
+
+          $rootScope.loginmanager.checkIfWasAuth();
+        }
+
+        return $rootScope.loginmodal;
+      });
+    }
+
+
+
     if ( $ionicSideMenuDelegate.isOpen() ) {
       $ionicSideMenuDelegate.toggleLeft();
+    }
+
+    if (!$rootScope.utils.checkDBSupport()) {
+
+      $rootScope.user.logoutUser();
+
+      $state.go("index");
+      
+      event.preventDefault();
+
+      return false;
     }
 
     angular.element(document.body).removeClass("is-search is-subheader");
@@ -141,7 +211,19 @@ angular.module('clg.controllers')
       $rootScope.utils.back_to.params = toParams;
 
     	if ( fromState.name != 'index' ) {
-    		$state.go('index');
+    		// $state.go('index');
+
+        console.log('redirect to login?');
+
+        if ( !$rootScope.deviceReady ) {
+
+          $scope.readyQueue.push(function() {
+            showLoginModal();
+          });
+
+        } else {
+          showLoginModal();
+        }
     	}
     } else {
 
@@ -150,6 +232,7 @@ angular.module('clg.controllers')
 
         $state.go("home");
       }
+      
 
     }
 

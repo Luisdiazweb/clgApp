@@ -4,31 +4,77 @@
     <ion-nav-back-button class="button-positive"></ion-nav-back-button>
   </ion-nav-bar>
 
+  <ion-nav-buttons side="right">
+    <button class="button button-positive button-clear" ng-click="popover.show($event)">Filtrar</button>
+  </ion-nav-buttons>
+
   <ion-header-bar class="bar bar-subheader item-input-inset {{ utils.navBarClass }}">
      <label class="item-input-wrapper">
-        <i class="icon ion-ios-search placeholder-icon search-placeholder" ng-show="!backgroundLoading"></i>
-        <span class="inline-spinner" ng-show="backgroundLoading">
+        <i class="icon ion-ios-search placeholder-icon search-placeholder" ng-show="!utils.backgroundLoading"></i>
+        <span class="inline-spinner" ng-show="utils.backgroundLoading">
           <ion-spinner icon="ios-small"></ion-spinner>
         </span>
-        <input type="search" placeholder="Search" ng-model="searchQuery">
+        <input type="search" placeholder="Buscar" ng-model="searchQuery">
       </label>
-      <button class="button button-clear button-positive" ng-show="searchQuery.length" ng-click="searchQuery=''; clientes.busqueda.resultados = {};">
-        Cancel
+      <button class="button button-clear button-positive" ng-show="searchQuery.length" ng-click="clearSearch($event)">
+        Cancelar
       </button>
   </ion-header-bar>
 
   <ion-content>
    <div class="spacer"></div>
+
     
-   <div class="list">
+   <div ng-if="searchFilter == 'products'">
 
-    <a class="item item-client" ng-repeat="item in clientes.busqueda.resultados[clientes.busqueda.pagina_actual]" href="{{ clientes.routing.cliente( item.ClienteCodigo ) }}">
-      <span class="item-note">#{{ item.ClienteCodigo }}</span>
+   <div class="row filters-row">
+     <label class="item item-input item-select col item-dark">
+      <div class="input-label">
+        Marca
+      </div>
+      <select ng-model="filtersDropdown.trademarks" ng-change="watchDropdown($event)">
+        <option ng-repeat="item in resulting.trademarks" value="{{ item.Fabricante }}">{{ (item.Fabricante||'Todas') }}</option>
+      </select>
+    </label>
 
-      <h2 class="u-capitalize u-bold">{{ item.ClienteNombre }}</h2>
-      <p class="u-capitalize">{{ item.Departamento }}, {{ item.Municipio }}</p>
+     <label class="item item-input item-select col item-dark">
+      <div class="input-label">
+        Categoria
+      </div>
+      <select ng-model="filtersDropdown.categories" ng-change="watchDropdown($event)">
+        <option ng-repeat="item in resulting.categories" value="{{ item.TipoDescripcion }}">{{ (item.TipoDescripcion||'Todas') }}</option>
+      </select>
+    </label>
+
+   </div>
+
+    <div class="list">
+
+      <a class="item item-client" ng-repeat="item in inventario.busqueda.resultados[inventario.busqueda.pagina_actual]" href="{{ inventario.routing.producto( item.ProductoCodigo ) }}">
+        <span class="item-note">#{{ item.ProductoCodigo }}</span>
+
+        <h2 class="u-capitalize u-bold">{{ item.ProductoDescripcion }}</h2>
+      </a>
+
+    </div>
+
+  </div>
+
+  <div class="list" ng-if="searchFilter == 'trademarks'">
+
+    <a class="item item-client" ng-repeat="item in inventario.busqueda.resultados[inventario.busqueda.pagina_actual]" href="javascript:;" ng-click="useFilter( item.Fabricante )">
+      <span class="item-note">USAR FILTRO</span>
+      <h2 class="u-capitalize u-bold">{{ item.Fabricante }}</h2>
     </a>
 
+  </div>
+
+  <div class="list" ng-if="searchFilter == 'categories'">
+
+    <a class="item item-client" ng-repeat="item in inventario.busqueda.resultados[inventario.busqueda.pagina_actual]" href="javascript:;" ng-click="useFilter( item.TipoDescripcion )">
+      <span class="item-note">USAR FILTRO</span>
+      <h2 class="u-capitalize u-bold">{{ item.TipoDescripcion }}</h2>
+    </a>
 
   </div>
   
@@ -36,14 +82,14 @@
   <!-- Paginacion -->
   <div class="row">
     <div class="col">
-      <a class="button button-clear button-dark" ng-click="prevPage()" ng-show="clientes.busqueda.pagina_actual>1">
+      <a class="button button-clear button-dark" ng-click="prevPage()" ng-show="inventario.busqueda.pagina_actual>1">
         <i class="icon ion-chevron-left"></i>
         
         Anterior
      </a>
     </div>
     <div class="col text-right">
-      <a class="button button-clear button-dark" ng-click="nextPage()" ng-show="clientes.busqueda.resultados[clientes.busqueda.pagina_actual].length == 10">
+      <a class="button button-clear button-dark" ng-click="nextPage()" ng-show="inventario.busqueda.resultados[inventario.busqueda.pagina_actual].length == 10">
         Siguiente 
 
         <span class="inline-spinner" ng-show="backgroundLoading">

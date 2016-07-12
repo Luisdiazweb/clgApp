@@ -32,7 +32,11 @@ angular.module('clg', [
     if (window.cordova) {
       $rootScope.database = $cordovaSQLite.openDB("clg.db");
     }else{
-      $rootScope.database = window.openDatabase("clg.db", '1', 'my', 1024 * 1024 * 100); // browser
+      if (  window.openDatabase != undefined ) {
+        $rootScope.database = window.openDatabase("clg.db", '1', 'my', 1024 * 1024 * 100); // browser
+      } else {
+        $rootScope.database = 'NOT_SUPPORTED';
+      }
     }
 
 

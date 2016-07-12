@@ -3,20 +3,18 @@ angular.module('clg.controllers')
 .controller('ClientsSearch', function($rootScope, $scope, $state, $stateParams, $timeout) {
 
 
-	$scope.backgroundLoading = false;
-
 	$scope.searchQuery = '';
 	$scope.delay;
 
 
 	$scope.$watch('searchQuery', function(query) {
-		if ( $scope.delay || $scope.backgroundLoading ) {
+		if ( $scope.delay || $rootScope.utils.backgroundLoading ) {
 			clearTimeout($scope.delay);
 		}
 
-		$scope.backgroundLoading = true;
+		$rootScope.utils.backgroundLoading = true;
 		if ( $scope.searchQuery.trim() == "" ) {
-			$scope.backgroundLoading = false;
+			$rootScope.utils.backgroundLoading = false;
 			return false;
 		}
 
@@ -34,11 +32,11 @@ angular.module('clg.controllers')
 
 	$scope.nextPage = function() {
 
-		if ( $scope.backgroundLoading ) {
+		if ( $rootScope.utils.backgroundLoading ) {
 			return false;
 		}
 
-		$scope.backgroundLoading = true;
+		$rootScope.utils.backgroundLoading = true;
 
 		
 		$rootScope.Catalogos.Clientes.search($scope.searchQuery, $rootScope.clientes.busqueda.pagina_actual+1).then(function(res) {
@@ -63,7 +61,7 @@ angular.module('clg.controllers')
 			$timeout(function() {
 				$rootScope.clientes.busqueda.resultados[$rootScope.clientes.busqueda.pagina_actual+1] = _page_rows;
 				++$rootScope.clientes.busqueda.pagina_actual;
-				$scope.backgroundLoading = false;
+				$rootScope.utils.backgroundLoading = false;
 			}, 500);
 
 		}, function(err) {
@@ -73,7 +71,7 @@ angular.module('clg.controllers')
 
 
 	$scope.searchClients = function() {
-		$scope.backgroundLoading = true;
+		$rootScope.utils.backgroundLoading = true;
 
 		$rootScope.Catalogos.Clientes.search($scope.searchQuery, 1).then(function(res) {
 			
@@ -98,7 +96,7 @@ angular.module('clg.controllers')
 			$rootScope.clientes.busqueda.resultados[$rootScope.clientes.busqueda.pagina_actual] = [];
 			$rootScope.clientes.busqueda.resultados[$rootScope.clientes.busqueda.pagina_actual] = _page_rows;
 
-			$scope.backgroundLoading = false;
+			$rootScope.utils.backgroundLoading = false;
 		}, function(err) {
 			// console.log(err);
 		});
