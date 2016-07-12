@@ -121,7 +121,7 @@ angular.module('clg.controllers')
   $scope.$watch('deviceReady', function(isReady) {
     if ( isReady ) {
       if ( !$rootScope.online ) {
-        biu("No se ha detectado conexion de red, la aplicacion cambiara a modo offline.", {type: 'danger'});
+        biu("No se ha detectado conexion de red, la aplicacion cambiara a modo offline.", {type: 'danger', alignBottom: true});
       }
 
       $http.get('http://dccolorweb.com/experiments/clg/endpoints/user_login.php').then(function() {
@@ -145,9 +145,9 @@ angular.module('clg.controllers')
     }
 
     if ( newStatus == false ) {
-      biu("No se ha detectado conexion de red, la aplicacion cambiara a modo offline.", {type: 'danger'});
+      biu("No se ha detectado conexion de red, la aplicacion cambiara a modo offline.", {type: 'danger', alignBottom: true});
     } else {
-      biu("Conexion detectada, modo offline apagado.", {type: 'success'});
+      biu("Conexion detectada, modo offline apagado.", {type: 'success', alignBottom: true});
     }
 
     $rootScope.last_was_online = newStatus;
