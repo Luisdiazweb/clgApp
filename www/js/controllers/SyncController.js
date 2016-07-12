@@ -70,7 +70,7 @@ angular.module('clg.controllers')
 			    		$rootScope.utils.loaded();
 
 			    		if ( err.status < 0 ) {
-			    			$rootScope.online = false;
+			    			// $rootScope.online = false;
 			    		}
 
 			    		// sync_now();
@@ -100,13 +100,12 @@ angular.module('clg.controllers')
 
 
 	if ( $state.current.name === "sync_start" ) {
-		if ( $rootScope.online ) {
-			$scope.syncAll();
-		} else {
+		if ( !$rootScope.online ) {
 			$rootScope.utils.showAlert('Notificacion de red', 
-				'No se puede realizar esta accion debido a que no se detecto conexion de red.');
-			$state.go('sync');
+				'La ultima sincronizacion fallo debido a un problema de red. Es posible que no cuente con conexion de datos, '
+				+ 'intentatemos establecer conexion con los servidores.');
 		}
+		$scope.syncAll();
 	}
 
 

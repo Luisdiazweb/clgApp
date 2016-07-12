@@ -116,7 +116,7 @@ angular.module('clg.factories')
 	          	}, 800);
 
 	            setTimeout(function() {
-	              biu("Te has logueado como usuario en modo offline.", { type: 'success', alignBottom: true });
+	              biu("Te has logueado como usuario en modo offline.", { type: 'success' });
 	            }, 3000);
 
 	          });
@@ -161,7 +161,7 @@ angular.module('clg.factories')
 	          		$timeout($rootScope.utils.loaded, 100);
 	          	}, 800);
 
-	          	biu("Has iniciado sesion correctamente.", { type: 'success', alignBottom: true });
+	          	biu("Has iniciado sesion correctamente.", { type: 'success' });
 
 	    			});
 	    		}

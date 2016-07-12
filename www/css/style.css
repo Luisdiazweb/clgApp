@@ -294,8 +294,44 @@
 
 
 /*debuging*/
-ion-side-menus{
+/*ion-side-menus{
 	max-width: 400px;
 	margin: 0 auto;
 	box-shadow: 0px 0px 0px 5px rgba(0, 0, 0, 0.2);
-} body { background-color: rgba(0, 0, 0, 0.2);  }
+} body { background-color: rgba(0, 0, 0, 0.2);  }*/
+
+/*TABLET-TWEEKS*/
+@media screen and (min-width: 769px) {
+	.menu-content{
+		left: 275px;
+		width: auto;
+		transform: translate3d(0px, 0px, 0px) !important;
+	}
+
+	.menu-content .overflow-scroll > .scroll,
+	.modal .overflow-scroll > .scroll{
+		max-width: 900px;
+    margin: 0 auto;
+	}
+
+	.menu-content .overflow-scroll > .scroll {
+		padding-top: 30px;
+	}
+
+	.menu-content .pane[state="index"] .overflow-scroll > .scroll,
+	.modal .overflow-scroll > .scroll{
+		max-width: 400px;
+	}
+
+	.hidden-tablet{
+		display: none;
+	}
+
+	.item.item-divider{
+		border-width: 0px;
+	}
+
+	.client-reports .item.item-divider{
+		margin-top: 10px;
+	}
+}

@@ -89,6 +89,26 @@ angular.module('clg.controllers')
     $rootScope.loginmodal = modal;
   });
 
+  // Cleanup the modal when we're done with it!
+  $scope.$on('$destroy', function() {
+    $rootScope.loginmodal.remove();
+    consolel.log('removing?');
+  });
+
+   // Execute action on remove modal
+  $scope.$on('modal.removed', function() {
+    // Execute action
+
+    console.log('hidding');
+    if ( !$rootScope.user.isLogged() ) {
+      event.preventDefault();
+
+      $rootScope.loginmodal.show();
+      console.log('trying to re-open');
+    }
+  });
+
+
 
 
 
@@ -121,7 +141,7 @@ angular.module('clg.controllers')
   $scope.$watch('deviceReady', function(isReady) {
     if ( isReady ) {
       if ( !$rootScope.online ) {
-        biu("No se ha detectado conexion de red, la aplicacion cambiara a modo offline.", {type: 'danger', alignBottom: true});
+        biu("No se ha detectado conexion de red, la aplicacion cambiara a modo offline.", {type: 'danger'});
       }
 
       $http.get('http://dccolorweb.com/experiments/clg/endpoints/user_login.php').then(function() {
@@ -145,9 +165,9 @@ angular.module('clg.controllers')
     }
 
     if ( newStatus == false ) {
-      biu("No se ha detectado conexion de red, la aplicacion cambiara a modo offline.", {type: 'danger', alignBottom: true});
+      biu("No se ha detectado conexion de red, la aplicacion cambiara a modo offline.", {type: 'danger'});
     } else {
-      biu("Conexion detectada, modo offline apagado.", {type: 'success', alignBottom: true});
+      biu("Conexion detectada, modo offline apagado.", {type: 'success'});
     }
 
     $rootScope.last_was_online = newStatus;
@@ -232,7 +252,7 @@ angular.module('clg.controllers')
 
         $state.go("home");
       }
-      
+
 
     }
 

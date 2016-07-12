@@ -4,6 +4,10 @@ angular.module('clg.factories')
 
 	return [
     {
+      title: "Inicio",
+      url: "#/home"
+    },
+    {
       title: "Clientes",
       url: "#/clientes"
     },
