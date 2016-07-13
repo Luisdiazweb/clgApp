@@ -103,13 +103,13 @@ angular.module('clg.config')
     .state('sync', {
       url: "/sync",
       controller: "SyncController",
-      templateUrl: 'views/sync.html'
+      templateUrl: 'views/sincronizacion/index.html'
     })
 
     .state('sync_start', {
       url: "/sync/start",
       controller: "SyncController",
-      templateUrl: 'views/sync.start.html'
+      templateUrl: 'views/sincronizacion/sync.html'
     });
 
 

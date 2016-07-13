@@ -1,101 +1,7 @@
 
 angular.module('clg.controllers')
-.controller('SyncController', function($scope, $rootScope, $state, $ionicSideMenuDelegate, $cordovaSQLite, $timeout,
+.controller('SyncController', function($scope, $rootScope, $state, $cordovaSQLite, $timeout,
 	$http) {
-
-	if ( $ionicSideMenuDelegate.isOpen() ) {
-		$ionicSideMenuDelegate.toggleLeft();
-	}
-
-	//Start syncing all
-	$scope.syncing = {
-		current: 0,
-		total: $rootScope.sync_catalogues.length,
-		percent: 0
-	};
-
-	$scope.syncAll = function() {
-
-		function setStep (numb) {
-			var percent = 1;
-
-			if ( numb < ($scope.syncing.total + 1) ) {
-				percent = (100 / $scope.syncing.total) * (numb<$scope.syncing.total?numb/2:numb);
-			}
-
-			$scope.syncing.percent = percent;
-			$scope.syncing.current = numb;
-		}
-
-
-		var _current = 0;
-		function sync_now() {
-			$rootScope.utils.loading();
-			$rootScope.utils.sync_index = 0;
-
-			if	( _current < $scope.syncing.total ) {
-				
-				setStep(_current + 1);
-
-
-				$rootScope.sync_catalogues[_current].synced = 0;
-				$rootScope.sync_catalogues[_current].synced_at = null;
-
-				if ( $rootScope.sync_catalogues[_current].mapping ) {
-					$http.get($rootScope.sync_catalogues[_current].api_url)
-			    	.then(function(response) {
-
-			    		$rootScope.utils.loaded();
-
-			    		$rootScope.sync_catalogues[_current].total_records = response.data.length;
-			    		$rootScope.utils.sync_index = 1;
-
-			    		$rootScope.sync_catalogues[_current].mapping.bulk_sync(response.data, $rootScope.sync_catalogues[_current].label, 
-			    			function() {
-			    				var _synced_at = (new Date()).getTime();
-
-			    				$rootScope.sync_catalogues[_current].synced = 1;
-			    				$rootScope.sync_catalogues[_current].synced_at = _synced_at;
-			    				$rootScope.sync_catalogues[_current].synced_at_local = moment(_synced_at).fromNow();
-
-				    			_current++;
-				    			sync_now();
-				    		}
-			    		);
-
-
-			    	}, function(err) {
-			    		$rootScope.utils.showAlert("Algo salio mal.", 'El servidor no responde, probablemente se deba a un problema de red. '
-			    			+ 'Porfavor intenta mas tarde.');
-			    		$rootScope.utils.loaded();
-
-			    		if ( err.status < 0 ) {
-			    			// $rootScope.online = false;
-			    		}
-
-			    		// sync_now();
-			    		$state.go("sync");
-			    	});
-				} else {
-					$rootScope.utils.loaded();
-					_current++;
-    			sync_now();
-				}
-
-			} else {
-				$rootScope.utils.loaded();
-    		$rootScope.utils.showAlert("Hecho", 'Sincronizacion realizada con exito.');
-    		$state.go("sync");
-			}
-		}
-
-		$timeout(function() {
-			setStep(1);
-
-			_current = 0;
-			sync_now();
-		}, 500);
-	}
 
 
 
@@ -105,11 +11,11 @@ angular.module('clg.controllers')
 				'La ultima sincronizacion fallo debido a un problema de red. Es posible que no cuente con conexion de datos, '
 				+ 'intentatemos establecer conexion con los servidores.');
 		}
-		$scope.syncAll();
+
+		if ( !$rootScope.syncManager.isSyncing ) {
+      $rootScope.syncManager.syncAll();
+    }
 	}
-
-
-
 
 
 

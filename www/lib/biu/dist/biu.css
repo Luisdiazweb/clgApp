@@ -74,12 +74,12 @@ biu-warning {
     background-color: #d6e9c6
 }
 .biu-info {
-    color: #31708f;
-    background-color: #d9edf7;
-    border-color: #bce8f1
+    color: #E3F2FD;
+    background-color: #2196F3;
+    border-color: #2196F3
 }
 .biu-info .biu-close:hover {
-    background-color: #bce8f1
+    background-color: #1E88E5
 }
 .biu-warning {
     color: #8a6d3b;

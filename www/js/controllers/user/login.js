@@ -2,6 +2,10 @@
 angular.module('clg.controllers')
 .controller('LoginController', function($rootScope) {
 
-	$rootScope.loginmanager.checkIfWasAuth();
+	$rootScope.$watch('deviceReady', function(isReady) {
+		if ( isReady ) {
+			$rootScope.loginmanager.checkIfWasAuth();
+		}
+	});
 
 });

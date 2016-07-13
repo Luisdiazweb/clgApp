@@ -15,9 +15,22 @@
     
    <div class="list">
 
-   <a class="item item-icon-left" href="#/sync/start">
+   <a href="#/sync/settings" class="item">
+     Configuracion
+   </a>
+
+   <div class="item item-divider">
+     Sincronizar
+   </div>
+
+    <a class="item item-icon-left" href="#/sync/start">
       <i class="icon ion-gear-b"></i>
       Sincronizar ahora
+    </a>
+
+    <a class="item item-icon-left" href="javascript:;" ng-click="utils.continueAsBackground()">
+      <i class="icon ion-gear-b"></i>
+      Sincronizar ahora en segundo plano
     </a>
 
 

@@ -5,23 +5,33 @@ angular.module('clg.factories')
 	return [
     {
       title: "Inicio",
-      url: "#/home"
+      url: "#/home",
+      classes: 'item-positive'
     },
     {
       title: "Clientes",
-      url: "#/clientes"
+      url: "#/clientes",
+      classes: ''
     },
     {
       title: "Inventario",
-      url: "#/inventario"
+      url: "#/inventario",
+      classes: ''
+    },
+    {
+      title: "CONFIGURACION",
+      url: "javascript:;",
+      classes: 'item-divider'
     },
     {
       title: "Sincronizacion",
-      url: "#/sync"
+      url: "#/sync",
+      classes: ''
     },
     {
       title: "Cerrar sesion",
-      url: "#/logout"
+      url: "#/logout",
+      classes: ''
     }
   ];
 	
