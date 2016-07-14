@@ -363,6 +363,10 @@
 	bottom: 52px;
 }
 
+.app-syncing .action-sheet-wrapper{
+	bottom: 52px;
+}
+
 .item.item-no-padding{
 	padding: 0;
 	border-width: 0;

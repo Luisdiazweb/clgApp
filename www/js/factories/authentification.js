@@ -52,7 +52,10 @@ angular.module('clg.factories')
 			}
 
 			$rootScope.loginmanager.setAutoSync(_self.user_id, newStatus).then(function(res) {
-				console.log('cambiado', res);
+				// console.log('cambiado', res);
+
+			$rootScope.syncManager.startBackgroundSyncing();
+
 			}, function(err) {
 				console.log('error', err);
 			});

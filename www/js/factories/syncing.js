@@ -464,6 +464,7 @@ angular.module('clg.factories')
 
 
 	  	function oneTimePass() {
+
 	  		var current_time = new Date();
 	  		var current_hour = current_time.getHours();
 	  		var current_minute = current_time.getMinutes();
@@ -472,7 +473,9 @@ angular.module('clg.factories')
 	  			
 	  			if ( _scope.tasks.list[i].sync_hour == current_hour && _scope.lastBackgroundSync != _scope.tasks.list[i].id ) {
 
-	  				if ( _scope.tasks.list[i].sync_minute <= current_minute && _scope.tasks.list[i].sync_minute > (current_minute-11) ) {
+	  				if ( _scope.tasks.list[i].sync_minute <= current_minute 
+	  					&& _scope.tasks.list[i].sync_minute > (current_minute-11)
+	  					&& $rootScope.user.auto_sync ) {
 
 	  					_scope.isBackgroundSyncing = true;
 					  	_scope.isModalSync = false;

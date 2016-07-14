@@ -66,7 +66,7 @@
     <script src="js/controllers/SyncController.js"></script>
   </head>
 
-  <body ng-app="clg" ng-controller="MainController as logic">
+  <body ng-app="clg" ng-controller="MainController as logic" ng-class="{'app-syncing': syncManager.isBackgroundSyncing}">
 
     <div class="backgroundSync" ng-class="{'content-loaded': contentLoaded, 'is-shown': syncManager.isBackgroundSyncing}">
       <div class="list">
@@ -89,7 +89,7 @@
       </div>
     </div>
 
-    <ion-side-menus class="content-wrapper" enable-menu-with-back-views="true" ng-class="{&apos;content-loaded&apos;: contentLoaded, 'app-syncing': syncManager.isBackgroundSyncing}">
+    <ion-side-menus class="content-wrapper" enable-menu-with-back-views="true" ng-class="{&apos;content-loaded&apos;: contentLoaded}">
       <!-- Left menu -->
       <ion-side-menu side="left" ng-show="user.isLogged()">
         <ion-header-bar class="bar-dark">
