@@ -1,0 +1,59 @@
+<ion-modal-view>
+  <ion-header-bar class="bar bar-header" align-title="center">
+    
+    <button class="button button-stable button-small" ng-click="syncManager.tasks.resetForm()">
+      Cancelar
+    </button>
+
+
+    <h1 class="title">Crear tarea</h1>
+
+    
+    <button class="button button-positive" ng-click="syncManager.tasks.isEditing?syncManager.tasks.updateTask():syncManager.tasks.addTask()">
+      {{ syncManager.tasks.isEditing ? 'Guardar' : 'Agregar' }}
+    </button>
+
+  </ion-header-bar>
+
+  <ion-content class="content-stable">
+    
+    <div class="spacer"></div>
+    
+    <div class="list list-inset">
+
+      <div class="row responsive-sm">
+        <label class="col item item-input">
+          <div class="input-label">
+            Titulo:
+          </div>
+          <input type="text" placeholder="Titulo" ng-model="syncManager.tasks.newTask.title">
+        </label>
+      </div>
+
+      <div class="row responsive-sm">
+        <label class="col item item-input item-select">
+          <div class="input-label">
+            Hora:
+          </div>
+          <select name="" id="" ng-model="syncManager.tasks.newTask.sync_hour">
+            <option value="">Seleccionar hora</option>
+            <option ng-repeat="hora in utils.range(0, 23)" value="{{ hora }}">{{ hora }}</option>
+          </select>
+        </label>
+
+        <label class="col item item-input item-select">
+          <div class="input-label">
+            Minuto:
+          </div>
+          <select name="" id="" ng-model="syncManager.tasks.newTask.sync_minute">
+            <option value="">Seleccionar hora</option>
+            <option ng-repeat="minuto in utils.range(0, 59, 10)" value="{{ minuto }}">{{ minuto }}</option>
+          </select>
+        </label>
+      </div>
+
+    </div>
+    <div class="spacer"></div>
+
+  </ion-content>
+</ion-modal-view>

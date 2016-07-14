@@ -1,7 +1,7 @@
 
 angular.module('clg.controllers')
 .controller('SyncController', function($scope, $rootScope, $state, $cordovaSQLite, $timeout,
-	$http) {
+	$http, $ionicActionSheet) {
 
 
 
@@ -16,6 +16,41 @@ angular.module('clg.controllers')
       $rootScope.syncManager.syncAll();
     }
 	}
+
+
+  if ( $state.current.name === "sync_settings" ) {
+    $rootScope.syncManager.tasks.fetchAll();
+  }
+
+
+
+  $scope.openEditSheet = function(item) {
+    var editIcon = ionic.Platform.isAndroid() ? '<i class="icon ion-edit"></i> ' : '';
+    var removeIcon = ionic.Platform.isAndroid() ? '<i class="icon ion-trash-b"></i> ' : '';
+    $ionicActionSheet.show({
+       buttons: [
+         { text: editIcon + 'Editar' }
+       ],
+       destructiveText: removeIcon + 'Eliminar',
+       destructiveButtonClicked: function() {
+        $rootScope.syncManager.tasks.deleteTask(item);
+
+        return true;
+       },
+       titleText: 'Editar tarea',
+       cancelText: 'Cancel',
+       cancel: function() {
+            // add cancel code..
+          },
+       buttonClicked: function(index) {
+         if ( index == 0 ) {
+          $rootScope.syncManager.tasks.openEditModal(item);
+         }
+
+         return true;
+       }
+     });
+  }
 
 
 

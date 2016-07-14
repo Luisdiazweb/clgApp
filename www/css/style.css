@@ -27,7 +27,7 @@
 .clgprogressbar .clgprogress{
 	height: 5px;
 	width: auto;
-	background-color: #387ef5;
+	background-color: #2196F3;
 	transition: width 0.2s;
 	float: left;
 }
@@ -86,7 +86,7 @@
 }
 
 .syncing-box-progressbar .syncing-box-progress{
-	background-color: #387ef5;
+	background-color: #2196F3;
   height: 2px;
   -webkit-transition: width 0.1s;
   transition: width 0.1s;
@@ -334,7 +334,7 @@
 .backgroundSync .item .button{
 	position: absolute;
 	top: 50%;
-	right: 60px;
+	right: 50px;
 	margin-top: -15px;
 }
 
@@ -350,7 +350,7 @@
 .bgprogressbar .bgprogress{
 	width: 0%;
 	height: 3px;
-	background-color: #387ef5;
+	background-color: #2196F3;
 
 	float: left;
 
@@ -363,6 +363,21 @@
 	bottom: 52px;
 }
 
+.item.item-no-padding{
+	padding: 0;
+	border-width: 0;
+	border-top-width: 1px;
+	margin: 0;
+}
+
+.item.item-no-padding .button{
+	margin: 0;
+	border-radius: 0px;
+}
+
+.content-stable{
+	background-color: #e8e8e8;
+}
 
 /*debuging*/
 /*ion-side-menus{
@@ -379,10 +394,23 @@
 		transform: translate3d(0px, 0px, 0px) !important;
 	}
 
+	.spacer{
+		height: 15px;
+	}
+
 	.menu-content .overflow-scroll > .scroll,
 	.modal .overflow-scroll > .scroll{
-		max-width: 900px;
+		max-width: 800px;
     margin: 0 auto;
+	}
+
+	.menu-open .menu-content .pane,
+	.menu-open .menu-content .scroll-content {
+	  pointer-events: all;
+	}
+
+	.menu-open .menu-content .scroll-content .scroll {
+	  pointer-events: all;
 	}
 
 	.menu-content .overflow-scroll > .scroll {
@@ -391,7 +419,7 @@
 
 	.menu-content .pane[state="index"] .overflow-scroll > .scroll,
 	.modal .overflow-scroll > .scroll{
-		max-width: 400px;
+		max-width: 500px;
 	}
 
 	.hidden-tablet{

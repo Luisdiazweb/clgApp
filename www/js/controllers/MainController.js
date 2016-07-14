@@ -52,6 +52,14 @@ angular.module('clg.controllers')
     $rootScope.syncmodal = modal;
   });
 
+ $rootScope.newTaskModal;
+  $ionicModal.fromTemplateUrl('views/sincronizacion/newTask.html', {
+    scope: $scope,
+    backdropClickToClose: false
+  }).then(function(modal) {
+    $rootScope.newTaskModal = modal;
+  });
+
   $rootScope.syncManager = SyncManager;
   $rootScope.sync_catalogues = $rootScope.syncManager.setMapping([
       {
@@ -90,5 +98,7 @@ angular.module('clg.controllers')
   $rootScope.$watch('online', $rootScope.utils.onlineStatusListener);
   //prevent loading
   $rootScope.$on('$stateChangeStart', $rootScope.utils.stateChangeListener);
+  //auto-sync settings change
+  $rootScope.$watch('user.auto_sync', $rootScope.user.syncStatusChange);
 
 });

@@ -106,6 +106,12 @@ angular.module('clg.config')
       templateUrl: 'views/sincronizacion/index.html'
     })
 
+    .state('sync_settings', {
+      url: "/sync/settings",
+      controller: "SyncController",
+      templateUrl: 'views/sincronizacion/settings.html'
+    })
+
     .state('sync_start', {
       url: "/sync/start",
       controller: "SyncController",

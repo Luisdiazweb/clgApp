@@ -6,7 +6,7 @@ angular.module('clg.factories')
     {
       title: "Inicio",
       url: "#/home",
-      classes: 'item-positive'
+      classes: 'item-stable'
     },
     {
       title: "Clientes",

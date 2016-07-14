@@ -71,7 +71,7 @@
     <div class="backgroundSync" ng-class="{'content-loaded': contentLoaded, 'is-shown': syncManager.isBackgroundSyncing}">
       <div class="list">
         <div class="item item-spinner">
-          Sincronizacion en curso {{ syncManager.syncing.current }} de {{ syncManager.syncing.total }} 
+          Sincronizando {{ syncManager.syncing.current }} de {{ syncManager.syncing.total }} 
           <span ng-repeat="item in syncManager.sync_catalogues"  ng-show="$index == (syncManager.syncing.current-1) && item.total_records != '?'">({{ ((sync_index/item.total_records)*100).toFixed() }}%)</span> &hellip;
 
           <div class="item-note">

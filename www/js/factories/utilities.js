@@ -165,7 +165,7 @@ angular.module('clg.factories')
 
 
 	    if ( toState.name != 'sync_start' ) {
-	    	if ( $rootScope.syncManager.isSyncing ) {
+	    	if ( $rootScope.syncManager.isSyncing && !$rootScope.syncManager.isBackgroundSyncing ) {
 	    		$rootScope.syncManager.setBackgroundSyncing();
 	    	}
 	    } else {
@@ -176,6 +176,17 @@ angular.module('clg.factories')
 
 	    $rootScope.utils.loaded();
 
+	  }
+
+
+
+	  this.range = function(min, max, step) {
+	  	 step = step || 1;
+		    var input = [];
+		    for (var i = min; i <= max; i += step) {
+		        input.push(i);
+		    }
+		    return input;
 	  }
 
 
@@ -214,6 +225,7 @@ angular.module('clg.factories')
 	      for (var i = 0; i < $rootScope.readyQueue.length; i++) {
 	        $rootScope.readyQueue[i].call(this);
 	      }
+
 	    }
 	  }
 

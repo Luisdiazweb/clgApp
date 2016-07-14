@@ -19,8 +19,8 @@ angular.module('clg.factories')
 	  * @param user {object} is the user object containg user information
 	  */
 	  _scope.createLocalLogin = function(user, successCallback, errorCallback) {
-	    var query = "INSERT INTO users (email, name, password, is_logged) VALUES (?,?,?,?)";
-	        $cordovaSQLite.execute($rootScope.database, query, [user.email, user.name, user.password, 0]).then(function(res) {
+	    var query = "INSERT INTO users (email, name, password, is_logged, auto_sync) VALUES (?,?,?,?,?)";
+	        $cordovaSQLite.execute($rootScope.database, query, [user.email, user.name, user.password, 0, 1]).then(function(res) {
 	          successCallback.call(this, res.insertId);
 	    }, function (err) {
 	        $rootScope.utils.showAlert("Error", "No se pudo guardar la sesion. - " + err);
@@ -37,6 +37,23 @@ angular.module('clg.factories')
 	    }, function (err) {
 	      errorCallback.call(this, err);
 	    });
+	  }
+
+	  //Update a loggin status for a user
+	  _scope.setAutoSync = function(id, as) {
+	    
+	    if ( as ) {
+	    	as = 1;
+	    } else {
+	    	as = 0;
+	    }
+
+	    // console.log('Up to change status to', as);
+
+	    $rootScope.user.setAutoSync(as);
+
+	    var query = "UPDATE users SET auto_sync = ? WHERE id = ?";
+	    return $cordovaSQLite.execute($rootScope.database, query, [as, id]);
 	  }
 
 
@@ -214,8 +231,11 @@ angular.module('clg.factories')
 	      return false;
 	    }
 
+	    // $cordovaSQLite.execute($rootScope.database, "DROP TABLE users");
+
 	    $cordovaSQLite.execute($rootScope.database, 
-	      "CREATE TABLE IF NOT EXISTS users (id integer primary key, email text, name text, password text, is_logged integer)");
+	      "CREATE TABLE IF NOT EXISTS users (id integer primary key, email text, name text, password text, is_logged integer, "
+	      + "auto_sync integer)");
 
 	    _scope.checkLocalUserLogged(function(res) {
 	      _scope.setUserAsLogged.call(this, res.id, 1, res, 

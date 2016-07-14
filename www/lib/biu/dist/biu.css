@@ -6,7 +6,7 @@
     background-color: #fff;
     padding: 10px 0;
     border-bottom: 1px solid #e2e2e2;
-    z-index: 1;
+    z-index: 99;
     animation-name: biu-down;
     animation-duration: .3s;
     font-size: 1rem;

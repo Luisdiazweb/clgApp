@@ -7,10 +7,20 @@ angular.module('clg.factories')
 		var _self = this;
 
 
+		function parseBoolean(number) {
+			if ( number ) {
+				return true;
+			}
+
+			return false;
+		}
+
+
 		this.name = "";
 		this.email = "";
 		this.password = "";
 		this.user_id = "";
+		this.auto_sync = true;
 
 		this.isLogged = function() {
 			return auth;
@@ -21,11 +31,34 @@ angular.module('clg.factories')
 			_self.email = user.email;
 			_self.password = user.password;
 			_self.user_id = user.id;
+			_self.auto_sync = parseBoolean(user.auto_sync);
 
 			auth = true;
+
+
+			$rootScope.syncManager.tasks.fetchAll($rootScope.syncManager.startBackgroundSyncing);
 		}
 
-	this.logoutUser = function() {
+		this.setAutoSync = function(as) {
+			_self.auto_sync = parseBoolean(as);
+
+			return _self.auto_sync;
+		}
+
+		this.syncStatusChange = function(newStatus) {
+
+			if ( !$rootScope.deviceReady ){
+				return false;
+			}
+
+			$rootScope.loginmanager.setAutoSync(_self.user_id, newStatus).then(function(res) {
+				console.log('cambiado', res);
+			}, function(err) {
+				console.log('error', err);
+			});
+		}
+
+		this.logoutUser = function() {
 			_self.name = "";
 			_self.email = "";
 			_self.password = "";
