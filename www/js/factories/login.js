@@ -41,7 +41,7 @@ angular.module('clg.factories')
 
 	  //Update a loggin status for a user
 	  _scope.setAutoSync = function(id, as) {
-	    
+
 	    if ( as ) {
 	    	as = 1;
 	    } else {
@@ -90,7 +90,7 @@ angular.module('clg.factories')
 
 
 
-		
+
 		_scope.login = function() {
 	    $rootScope.utils.loading();
 
@@ -110,6 +110,7 @@ angular.module('clg.factories')
 
 
 	    if ( !$rootScope.online ) {
+	      $rootScope.utils.showAlert('No estas conectado?');
 
 	      var query = "SELECT * FROM users WHERE email = ?";
 	      $cordovaSQLite.execute($rootScope.database, query, [ _scope.loginData.email ])
@@ -124,7 +125,7 @@ angular.module('clg.factories')
 		          }
 
 		          // console.log("now i must loggin..");
-	            
+
 	            $rootScope.utils.back_to = { name: "", params: {} };
 
 	          	$timeout(function() {
@@ -138,8 +139,8 @@ angular.module('clg.factories')
 
 	          });
 	        } else {
-	         $rootScope.utils.showAlert("Algo salio mal.", 
-	            'Las credenciales indicadas parecen ser incorrectas. Porfavor, intenta nuevamente.'); 
+	         $rootScope.utils.showAlert("Algo salio mal.",
+	            'Las credenciales indicadas parecen ser incorrectas. Porfavor, intenta nuevamente.');
 	         $rootScope.utils.loaded();
 	        }
 	      }, function(err) {
@@ -151,17 +152,17 @@ angular.module('clg.factories')
 
 
 
-	    $http.post($rootScope.api.login_url(), "email=" + _scope.loginData.email 
-	      + "&password=" + _scope.loginData.password, 
+	    $http.post($rootScope.api.login_url(), "email=" + _scope.loginData.email
+	      + "&password=" + _scope.loginData.password,
 	      { headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'} })
 	    	.then(function(response) {
 
 	    		if ( response.data.error ) {
-	    			$rootScope.utils.showAlert("Algo salio mal.", 
+	    			$rootScope.utils.showAlert("Algo salio mal.",
 	    				'Las credenciales indicadas parecen ser incorrectas. Porfavor, intenta nuevamente.');
 	    		} else {
 	    			_scope.loginSuccess(response.data, function() {
-	    				
+
 
 	    				if ( $rootScope.utils.back_to.name && $state.current.name != $rootScope.utils.back_to.name ) {
 		            $state.go($rootScope.utils.back_to.name, $rootScope.utils.back_to.params);
@@ -170,7 +171,7 @@ angular.module('clg.factories')
 		          }
 
 		          // console.log("now i must loggin..");
-	            
+
 	            $rootScope.utils.back_to = { name: "", params: {} };
 
 	          	$timeout(function() {
@@ -204,11 +205,11 @@ angular.module('clg.factories')
 	  	var _user = response.user;
 
 	    _scope.checkLocalUser(_user, function(res) {
-	      
+
 	      // console.log("checked local user", res);
 
 	      _scope.setUserAsLogged.call(this, res.id, 1, res, function(res) {
-	        
+
 	        // console.log(res, "set looged in sql");
 
 	        $rootScope.user.setLoggedAs(res);
@@ -233,12 +234,12 @@ angular.module('clg.factories')
 
 	    // $cordovaSQLite.execute($rootScope.database, "DROP TABLE users");
 
-	    $cordovaSQLite.execute($rootScope.database, 
+	    $cordovaSQLite.execute($rootScope.database,
 	      "CREATE TABLE IF NOT EXISTS users (id integer primary key, email text, name text, password text, is_logged integer, "
 	      + "auto_sync integer)");
 
 	    _scope.checkLocalUserLogged(function(res) {
-	      _scope.setUserAsLogged.call(this, res.id, 1, res, 
+	      _scope.setUserAsLogged.call(this, res.id, 1, res,
 	        function(res) {
 	          $rootScope.user.setLoggedAs(res);
 
@@ -251,20 +252,20 @@ angular.module('clg.factories')
 	          }
 
 	          // console.log("now i must loggin..");
-            
+
             $rootScope.utils.back_to = { name: "", params: {} };
 
           	$timeout(function() {
           		$rootScope.loginmodal.hide();
           		$timeout($rootScope.utils.loaded, 100);
           	}, 800);
-            
 
-	        }, 
+
+	        },
 	        function(err) {
 	          // console.log(err);
 	        });
-	      
+
 	    }, function( err, generator ) {
 	      //No session exists
 	      // console.log(err, generator);

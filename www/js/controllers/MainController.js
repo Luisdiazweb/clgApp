@@ -1,7 +1,7 @@
 
 angular.module('clg.controllers')
-.controller('MainController', function($scope, $rootScope, $state, $ionicSideMenuDelegate, $cordovaLocalNotification, 
-  $timeout, $cordovaSQLite, ClientsFactory, ProductsFactory, AuthManager, Utilities, SideMenu, HomeActivities, 
+.controller('MainController', function($scope, $rootScope, $state, $ionicSideMenuDelegate, $cordovaLocalNotification,
+  $timeout, $cordovaSQLite, ClientsFactory, ProductsFactory, AuthManager, Utilities, SideMenu, HomeActivities,
   InventoryActivities, $http, $ionicModal, LoginManager, SyncManager) {
 
   $rootScope.contentLoaded = true;
@@ -33,7 +33,7 @@ angular.module('clg.controllers')
   $rootScope.utils.loading();
 
 
-  $rootScope.loginmodal;
+  $rootScope.loginmodal = null;
   $ionicModal.fromTemplateUrl('views/modallogin.html', {
     scope: $scope,
     backdropClickToClose: false
@@ -44,7 +44,7 @@ angular.module('clg.controllers')
   $rootScope.loginmanager = new LoginManager($rootScope);
 
 
-  $rootScope.syncmodal;
+  $rootScope.syncmodal = null;
   $ionicModal.fromTemplateUrl('views/sincronizacion/modal.html', {
     scope: $rootScope,
     backdropClickToClose: false
@@ -52,7 +52,7 @@ angular.module('clg.controllers')
     $rootScope.syncmodal = modal;
   });
 
- $rootScope.newTaskModal;
+ $rootScope.newTaskModal = null;
   $ionicModal.fromTemplateUrl('views/sincronizacion/newTask.html', {
     scope: $scope,
     backdropClickToClose: false
@@ -84,7 +84,7 @@ angular.module('clg.controllers')
       }
     ]);
 
- 
+
 
   $rootScope.readyQueue = [];
   $rootScope.dispatchNow = $rootScope.utils.dispatchNow;

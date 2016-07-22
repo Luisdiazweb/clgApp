@@ -13,6 +13,9 @@
       <button class="button button-block" ng-click="loginmanager.login()" ng-class="{'button-positive': loginmanager.loginData.email&&loginmanager.loginData.password, 'button-dark': !loginmanager.loginData.email||!loginmanager.loginData.password}">
         Iniciar Sesion
       </button>
+
+
+      <button class="button button-positive button-block" ng-click="utils.showAlert('Red', (online ? 'Conexion detectada' : 'Sin conexion') + ' -- v. 3:18 pm -- DB:' + (database == undefined ? 'None' : database.version));">Probar conexion</button>
     </div>
   </ion-content>
 </ion-view>

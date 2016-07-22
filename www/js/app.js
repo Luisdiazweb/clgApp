@@ -4,14 +4,14 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 angular.module('clg', [
-    'ionic', 
-    'ngCordova', 
+    'ionic',
+    'ngCordova',
     'clg.config',
-    'clg.factories', 
+    'clg.factories',
     'clg.controllers'
   ])
 
-.run(function($ionicPlatform, $cordovaSQLite, $rootScope, $window) {
+.run(function($ionicPlatform, $cordovaSQLite, $rootScope, $window, $cordovaNetwork) {
   $ionicPlatform.ready(function() {
 
     if(window.cordova && window.cordova.plugins.Keyboard) {
@@ -30,7 +30,8 @@ angular.module('clg', [
     }
 
     if (window.cordova) {
-      $rootScope.database = $cordovaSQLite.openDB("clg.db");
+      $rootScope.database = $cordovaSQLite.openDB({name: "clg.db", 
+        location: "/data/data/com.ionicframework.clgapp556963/databases/"});
     }else{
       if (  window.openDatabase != undefined ) {
         $rootScope.database = window.openDatabase("clg.db", '1', 'my', 1024 * 1024 * 100); // browser
@@ -39,8 +40,7 @@ angular.module('clg', [
       }
     }
 
-
-    $rootScope.online = navigator.onLine;
+    $rootScope.online = typeof navigator.connection !== "undefined" ? $cordovaNetwork.isOnline() : true;
 
     $rootScope.deviceReady = true;
 
@@ -52,12 +52,20 @@ angular.module('clg', [
       });
     });
 
-    $jqwindow.on("online", function() {
+    // listen for Online event
+    $rootScope.$on('$cordovaNetwork:online', function(event, networkState){
       $rootScope.$apply(function() {
         $rootScope.online = true;
       });
     });
-    
+
+    // listen for Offline event
+    $rootScope.$on('$cordovaNetwork:offline', function(event, networkState){
+      $rootScope.$apply(function() {
+        $rootScope.online = false;
+      });
+    })
+
 
   });
 });

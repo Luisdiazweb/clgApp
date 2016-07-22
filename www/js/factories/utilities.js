@@ -194,6 +194,7 @@ angular.module('clg.factories')
 
 
 	  this.onlineStatusListener = function(newStatus) {
+
 	    if ( newStatus == $rootScope.last_was_online || !$rootScope.deviceReady ) {
 	      return false;
 	    }
@@ -210,6 +211,7 @@ angular.module('clg.factories')
 
 
 	  this.deviceReadyListener = function(isReady) {
+
 	    if ( isReady ) {
 	      if ( !$rootScope.online ) {
 	        biu("No se ha detectado conexion de red, la aplicacion cambiara a modo offline.", {type: 'danger'});

@@ -240,6 +240,8 @@ angular.module('clg.factories')
 
 				_scope.startBackgroundSyncing();
 
+				console.log('TAREA AGREGADA');
+
 			}, function(err) {
 				console.log('ERROR', err);
 			});
