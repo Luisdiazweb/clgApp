@@ -9,7 +9,7 @@ angular.module('clg.controllers')
 
 			if ( !synced_at ) {
 				$rootScope.utils.showAlert("Sincronizacion requerida", "La base de datos no ha sido sincronizada, "
-	      	+ "porfavor sincroniza los datos para continuar.");
+	      	+ "por favor sincroniza los datos para continuar.");
 	    	$state.go("home");
 			} else {
 				callback.call(this);

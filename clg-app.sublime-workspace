@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"box-",
+				"box-sizing"
+			],
+			[
+				"box",
+				"box-shadow"
+			],
+			[
+				"iframe",
+				"iframe-clone"
+			],
+			[
+				"get",
+				"getBounds"
+			],
+			[
+				"frame",
+				"frameborder"
+			],
+			[
 				"trade",
 				"trademarks"
 			],
@@ -50,10 +70,6 @@
 			[
 				"scyn",
 				"syncManager"
-			],
-			[
-				"get",
-				"getTimestamp"
 			],
 			[
 				"show",
@@ -316,6 +332,70 @@
 			}
 		},
 		{
+			"file": "www/js/routes.js",
+			"settings":
+			{
+				"buffer_size": 3173,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "www/css/style.css",
+			"settings":
+			{
+				"buffer_size": 9420,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "config.xml",
+			"settings":
+			{
+				"buffer_size": 5331,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/views/login.html",
+			"settings":
+			{
+				"buffer_size": 814,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "www/views/modallogin.html",
+			"settings":
+			{
+				"buffer_size": 1327,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "www/views/inventario/search.html",
+			"settings":
+			{
+				"buffer_size": 3907,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "www/js/factories/homeactivities.js",
+			"settings":
+			{
+				"buffer_size": 396,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "www/js/factories/sidemenu.js",
+			"settings":
+			{
+				"buffer_size": 607,
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "www/js/controllers/inventory/search.js",
 			"settings":
 			{
@@ -379,6 +459,7 @@
 	[
 		"/E/httpdocs/clg-app",
 		"/E/httpdocs/clg-app/platforms",
+		"/E/httpdocs/clg-app/platforms/android",
 		"/E/httpdocs/clg-app/plugins",
 		"/E/httpdocs/clg-app/scss",
 		"/E/httpdocs/clg-app/www",
@@ -391,6 +472,8 @@
 		"/E/httpdocs/clg-app/www/js/controllers/user",
 		"/E/httpdocs/clg-app/www/js/factories",
 		"/E/httpdocs/clg-app/www/views",
+		"/E/httpdocs/clg-app/www/views/clients",
+		"/E/httpdocs/clg-app/www/views/clients/facturas",
 		"/E/httpdocs/clg-app/www/views/inventario",
 		"/E/httpdocs/clg-app/www/views/inventario/categorias",
 		"/E/httpdocs/clg-app/www/views/inventario/marcas",
@@ -399,10 +482,20 @@
 	],
 	"file_history":
 	[
+		"/C/Users/jadiel/.android/debug.keystore",
+		"/E/httpdocs/clg-app/www/index.html",
+		"/E/httpdocs/clg-app/www/views/inventario/filtros.html",
+		"/E/httpdocs/clg-app/www/views/inventario/index.html",
+		"/E/httpdocs/clg-app/www/views/inventario/productos/index.html",
+		"/E/httpdocs/clg-app/www/views/inventario/marcas/index.html",
+		"/E/httpdocs/clg-app/www/views/inventario/categorias/index.html",
+		"/E/httpdocs/clg-app/www/views/clients/facturas/index.html",
+		"/E/httpdocs/clg-app/www/views/clients/search.html",
+		"/E/httpdocs/clg-app/www/views/clients/index.html",
+		"/E/httpdocs/clg-app/resizer.html",
 		"/E/httpdocs/clg-app/www/js/factories/utilities.js",
 		"/E/httpdocs/clg-app/www/views/home.html",
 		"/E/httpdocs/clg-app/www/views/login.html",
-		"/E/httpdocs/clg-app/www/index.html",
 		"/E/httpdocs/clg-app/www/js/factories/login.js",
 		"/E/httpdocs/clg-app/www/js/factories/syncing.js",
 		"/E/httpdocs/clg-app/www/js/factories/authentification.js",
@@ -435,27 +528,19 @@
 		"/E/httpdocs/clg-app/www/js/controllers/user/logout.js",
 		"/E/httpdocs/clg-app/www/views/sync.html",
 		"/E/httpdocs/dccolorweb.elpiche/wp_charity/header.php",
-		"/E/httpdocs/clg-app/www/views/inventario/filtros.html",
-		"/E/httpdocs/clg-app/www/views/inventario/index.html",
-		"/E/httpdocs/clg-app/www/views/clients/search.html",
 		"/E/httpdocs/clg-app/www/js/controllers/clients/search.js",
 		"/E/httpdocs/clg-app/www/views/inventario/categorias/show.html",
 		"/E/httpdocs/clg-app/www/js/controllers/inventory/categorias/show.js",
 		"/E/httpdocs/clg-app/www/js/controllers/inventory/marcas/show.js",
 		"/E/httpdocs/clg-app/www/js/controllers/inventory/categorias/index.js",
-		"/E/httpdocs/clg-app/www/views/inventario/categorias/index.html",
-		"/E/httpdocs/clg-app/www/views/inventario/marcas/index.html",
 		"/E/httpdocs/clg-app/www/js/controllers/inventory/products/show.js",
 		"/E/httpdocs/clg-app/www/js/controllers/inventory/products/index.js",
 		"/E/httpdocs/clg-app/www/js/controllers/inventory/marcas/index.js",
 		"/E/httpdocs/clg-app/www/views/inventario/marcas/show.html",
 		"/E/httpdocs/clg-app/www/views/inventario/productos/show.html",
 		"/E/httpdocs/clg-app/www/views/clients/facturas/show.html",
-		"/E/httpdocs/clg-app/www/views/clients/facturas/index.html",
-		"/E/httpdocs/clg-app/www/views/clients/index.html",
 		"/E/httpdocs/clg-app/www/views/clients/show.html",
 		"/E/httpdocs/clg-app/www/js/controllers/clients/reports/show.js",
-		"/E/httpdocs/clg-app/www/views/inventario/productos/index.html",
 		"/E/httpdocs/clg-app/www/js/controllers/clients/index.js",
 		"/E/httpdocs/clg-app/www/js/factories/inventoryactivities.js",
 		"/E/httpdocs/clg-app/www/views/inventory/index.html",
@@ -524,9 +609,7 @@
 		"/E/httpdocs/morastate/wp-content/themes/mora-state/templates/page-home.php",
 		"/E/httpdocs/dccolorweb.gdsbrasil/bower.json",
 		"/E/httpdocs/morastate/wp-content/themes/mora-state/content-wines.php",
-		"/E/httpdocs/morastate/wp-content/themes/mora-state/footer.php",
-		"/E/httpdocs/nuu/mora-state/src/styles/_navbar.scss",
-		"/E/httpdocs/morastate/wp-content/themes/mora-state/header.php"
+		"/E/httpdocs/morastate/wp-content/themes/mora-state/footer.php"
 	],
 	"find":
 	{
@@ -695,7 +778,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -725,11 +808,249 @@
 						"translation.y": 320.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
+					"file": "www/js/routes.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3173,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								305,
+								305
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 450.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "www/css/style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9420,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8977,
+								8977
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": -0.0,
+						"translation.y": 7592.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "config.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5331,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								981,
+								981
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 55.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "www/views/login.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 814,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								259,
+								259
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "www/views/modallogin.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1327,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								744,
+								744
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "www/views/inventario/search.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3907,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1953,
+								1953
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 300.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "www/js/factories/homeactivities.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 396,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								105,
+								105
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "www/js/factories/sidemenu.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 607,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								386,
+								386
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
 					"file": "www/js/controllers/inventory/search.js",
 					"semi_transient": false,
 					"settings":
@@ -741,8 +1062,8 @@
 						"selection":
 						[
 							[
-								3704,
-								3704
+								2902,
+								2902
 							]
 						],
 						"settings":
@@ -751,10 +1072,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2019.0,
+						"translation.y": 1559.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 7,
 					"type": "text"
 				}
 			]

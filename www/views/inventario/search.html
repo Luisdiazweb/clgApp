@@ -48,7 +48,7 @@
 
    </div>
 
-    <div class="list">
+    <div class="list paginable" ng-show="searchQuery">
 
       <a class="item item-client" ng-repeat="item in inventario.busqueda.resultados[inventario.busqueda.pagina_actual]" href="{{ inventario.routing.producto( item.ProductoCodigo ) }}">
         <span class="item-note">#{{ item.ProductoCodigo }}</span>
@@ -60,7 +60,7 @@
 
   </div>
 
-  <div class="list" ng-if="searchFilter == 'trademarks'">
+  <div class="list paginable" ng-if="searchFilter == 'trademarks'">
 
     <a class="item item-client" ng-repeat="item in inventario.busqueda.resultados[inventario.busqueda.pagina_actual]" href="javascript:;" ng-click="useFilter( item.Fabricante )">
       <span class="item-note">USAR FILTRO</span>
@@ -69,7 +69,7 @@
 
   </div>
 
-  <div class="list" ng-if="searchFilter == 'categories'">
+  <div class="list paginable" ng-if="searchFilter == 'categories'">
 
     <a class="item item-client" ng-repeat="item in inventario.busqueda.resultados[inventario.busqueda.pagina_actual]" href="javascript:;" ng-click="useFilter( item.TipoDescripcion )">
       <span class="item-note">USAR FILTRO</span>

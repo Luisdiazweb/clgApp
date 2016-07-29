@@ -14,6 +14,8 @@ angular.module('clg', [
 .run(function($ionicPlatform, $cordovaSQLite, $rootScope, $window, $cordovaNetwork) {
   $ionicPlatform.ready(function() {
 
+    $rootScope.backgroundServiceRunning = false;
+
     if(window.cordova && window.cordova.plugins.Keyboard) {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
@@ -39,6 +41,40 @@ angular.module('clg', [
         $rootScope.database = 'NOT_SUPPORTED';
       }
     }
+
+
+
+    if ( window.cordova ) {
+
+      cordova.plugins.backgroundMode.setDefaults({ 
+          title:  'CLG Syncing Service',
+          text:   'Executing background tasks.',
+          silent: true
+      });
+
+      // Enable background mode
+      cordova.plugins.backgroundMode.enable();
+
+      // Called when background mode has been activated
+      cordova.plugins.backgroundMode.onactivate = function () {
+
+        $rootScope.backgroundServiceRunning = true;
+        $rootScope.syncManager.startBackgroundSyncing();
+        
+      }
+
+      cordova.plugins.backgroundMode.ondeactivate = function () {
+        $rootScope.backgroundServiceRunning = false;
+        $rootScope.syncManager.stopBackgroundSyncing();
+      }
+
+    }
+
+    // $cordovaSQLite.execute($rootScope.database,  "DROP TABLE Maestro_Productos");
+    // $cordovaSQLite.execute($rootScope.database,  "DROP TABLE Cartera_Clientes");
+    // $cordovaSQLite.execute($rootScope.database,  "DROP TABLE sync_tasks");
+    // $cordovaSQLite.execute($rootScope.database,  "DROP TABLE syncs");
+    // $cordovaSQLite.execute($rootScope.database,  "DROP TABLE users");
 
     $rootScope.online = typeof navigator.connection !== "undefined" ? $cordovaNetwork.isOnline() : true;
 

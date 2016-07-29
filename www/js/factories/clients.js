@@ -114,10 +114,10 @@ angular.module('clg.factories')
 
 		db: {
 			drop: function() {
-				$cordovaSQLite.execute($rootScope.database,  "DROP TABLE Cartera_Clientes");
+				return $cordovaSQLite.execute($rootScope.database,  "DROP TABLE Cartera_Clientes");
 			},
 			init: function() {
-				$cordovaSQLite.execute($rootScope.database, 
+				return $cordovaSQLite.execute($rootScope.database, 
 		      "CREATE TABLE IF NOT EXISTS Cartera_Clientes (Periodo integer, Departamento text, Municipio text, NumeroFactura integer, "
 		      + "Vendedor text, ClienteCodigo text, ClienteNombre text, RangoPeriodo text, TotalFactura real, "
 		      + "Cantidad_Abonada real, Total real)");
@@ -125,12 +125,24 @@ angular.module('clg.factories')
 		},
 
 		bulk_sync: function(data, label, returningCallback) {
-			
-			this.db.drop();
-			this.db.init();
+			var scope = this;
+
+			this.db.drop()
+				.then(function() {
+
+					scope.db.init()
+						.then(function() {
+							_continueSync();
+						});
+					
+				});
+
+
+			function _continueSync() {
+				injectClient();
+			}
 
 			
-
       var _i = 0;
 
 			function injectClient() {
@@ -188,8 +200,6 @@ angular.module('clg.factories')
 				}
 
 			}
-
-			injectClient();
 
 
 		}

@@ -227,25 +227,34 @@ angular.module('clg.factories')
 
 		db: {
 			drop: function() {
-				$cordovaSQLite.execute($rootScope.database,  "DROP TABLE Maestro_Productos");
+				return $cordovaSQLite.execute($rootScope.database,  "DROP TABLE Maestro_Productos");
 			},
 			init: function() {
-				$cordovaSQLite.execute($rootScope.database, 
+				return $cordovaSQLite.execute($rootScope.database, 
 		      "CREATE TABLE IF NOT EXISTS Maestro_Productos (TipoCodigo integer, TipoDescripcion text, ProductoCodigo text, "
 		      + "Fabricante text, ProductoDescripcion text, Precio1 real, Precio2 real, Precio3 real, Precio4 real, "
 		      + "Precio5 real, Existencias integer, CostoUnitario real, CostoTotal real)");
 			},
 			initSyncs: function() {
-				$cordovaSQLite.execute($rootScope.database, 
+				return $cordovaSQLite.execute($rootScope.database, 
 		      "CREATE TABLE IF NOT EXISTS syncs (id integer primary key, module text, label text, "
 		      + "synced_at integer)");
 			}
 		},
 
 		bulk_sync: function(data, label, returningCallback) {
-			
-			this.db.drop();
-			this.db.init();
+			var scope = this;
+
+			//Wat for sqlite bc it is async
+			this.db.drop()
+				.then(function() {
+
+					scope.db.init()
+						.then(function() {
+							injectProduct();
+						});
+					
+				});
 
 			
 
@@ -309,7 +318,6 @@ angular.module('clg.factories')
 
 			}
 
-			injectProduct();
 
 
 		}

@@ -8,7 +8,7 @@
    <div class="spacer"></div>
 
 
-   <div class="client-details">
+   <div class="client-details no-shadow">
     <div class="item item-divider">
       CLIENTE: <a class="u-uppercase" href="{{ clientes.routing.cliente( clientes.actual.datos.ClienteCodigo ) }}">{{ clientes.actual.datos.ClienteNombre }}</a>
     </div>
@@ -18,7 +18,7 @@
 
     <div class="client-reports">
     
-    <div class="list">
+    <div class="list paginable">
 
       <div class="item item-center" ng-show="utils.backgroundLoading">
         <ion-spinner></ion-spinner>

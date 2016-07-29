@@ -91,11 +91,16 @@
       <!-- Left menu -->
       <ion-side-menu side="left" ng-show="user.isLogged()">
         <ion-header-bar class="bar-dark">
-          <h1 class="title">Men&#xFA;</h1>
+          <h1 class="title">&#xA0;</h1>
+          <div class="buttons buttons-right hidden-tablet">
+            <a class="button button-clear button-light" href="javascript:;" ng-click="toggleLeft()">
+              <i class="icon ion-close-round"></i>
+            </a>
+          </div>
         </ion-header-bar>
         <ion-content>
           <div class="list">
-            <a ng-repeat="item in SideMenu" class="item {{ item.classes }}" href="{{ item.url }}">{{ item.title }}</a>
+            <a ng-repeat="item in SideMenu" class="item {{ item.classes }}" ui-sref="{{ item.route }}" ui-sref-active="active">{{ item.title }}</a>
           </div>
         </ion-content>
       </ion-side-menu>

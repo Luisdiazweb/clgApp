@@ -27,16 +27,24 @@ angular.module('clg.factories')
 		}
 
 		this.setLoggedAs = function(user) {
-			_self.name = user.name;
-			_self.email = user.email;
-			_self.password = user.password;
-			_self.user_id = user.id;
-			_self.auto_sync = parseBoolean(user.auto_sync);
+
+			console.log(user, typeof user);
+
+			if ( typeof user === "object" ) {
+				_self.name = user.name;
+				_self.email = user.email;
+				_self.password = user.password;
+				_self.user_id = user.id;
+				_self.auto_sync = parseBoolean(user.auto_sync);
+			}else {
+				_self.user_id = user;
+			}
 
 			auth = true;
 
 
-			$rootScope.syncManager.tasks.fetchAll($rootScope.syncManager.startBackgroundSyncing);
+			// $rootScope.syncManager.tasks.fetchAll($rootScope.syncManager.startBackgroundSyncing);
+			$rootScope.syncManager.tasks.fetchAll();
 		}
 
 		this.setAutoSync = function(as) {
@@ -54,7 +62,7 @@ angular.module('clg.factories')
 			$rootScope.loginmanager.setAutoSync(_self.user_id, newStatus).then(function(res) {
 				// console.log('cambiado', res);
 
-			$rootScope.syncManager.startBackgroundSyncing();
+			// $rootScope.syncManager.startBackgroundSyncing();
 
 			}, function(err) {
 				console.log('error', err);

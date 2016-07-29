@@ -40,7 +40,7 @@ angular.module('clg.factories')
 				return $cordovaSQLite.execute($rootScope.database,  "DROP TABLE sync_tasks");
 			},
 			init: function() {
-				$cordovaSQLite.execute($rootScope.database, 
+				return $cordovaSQLite.execute($rootScope.database, 
 		      "CREATE TABLE IF NOT EXISTS sync_tasks (title text, sync_hour integer, sync_minute integer, user_id integer, "
 		      + "created_at integer)");
 			}
@@ -232,19 +232,24 @@ angular.module('clg.factories')
 				return false;
 			}
 
-			this.store(_task).then(function(res) {
-				_tasks_scope.resetForm();
-				_task.id = res.insertId;
+			_scope.db.init().then(function() {
 
-				_tasks_scope.fetchAll();
+				_tasks_scope.store(_task).then(function(res) {
+					_tasks_scope.resetForm();
+					_task.id = res.insertId;
 
-				_scope.startBackgroundSyncing();
+					_tasks_scope.fetchAll(function() {
+						_scope.startBackgroundSyncing();
+					});
 
-				console.log('TAREA AGREGADA');
+					console.log('TAREA AGREGADA');
 
-			}, function(err) {
-				console.log('ERROR', err);
+				}, function(err) {
+					console.log('ERROR', err);
+				});
+
 			});
+
 
 		}
 
@@ -462,10 +467,28 @@ angular.module('clg.factories')
 	  this.backgroundSyncQueueTimer;
 	  this.lastBackgroundSync;
 
+	  this.stopBackgroundSyncing = function() {
+	  	if ( _scope.backgroundSyncQueueTimer != undefined ) {
+  			clearTimeout(_scope.backgroundSyncQueueTimer);
+  		}
+	  }
+
 	  this.startBackgroundSyncing = function() {
 
 
 	  	function oneTimePass() {
+
+	  		if ( !$rootScope.backgroundServiceRunning ) {
+	  			if ( _scope.backgroundSyncQueueTimer != undefined ) {
+		  			clearTimeout(_scope.backgroundSyncQueueTimer);
+		  		}
+
+	  			_scope.backgroundSyncQueueTimer = setTimeout(oneTimePass, (5 * 100) * 1000);
+
+	  			return false;
+	  		}
+
+	  		console.log('Running background sync.');
 
 	  		var current_time = new Date();
 	  		var current_hour = current_time.getHours();

@@ -383,6 +383,147 @@
 	background-color: #e8e8e8;
 }
 
+
+/*THEME*/
+.menu{
+	background-color: #607D8B;
+}
+
+.menu .item{
+	background-color: transparent;
+	border-color: transparent;
+	color: #CFD8DC;
+	transition: color 0.2s;
+}
+
+.menu .item.activated {
+	border-color: transparent;
+	background-color: transparent;
+	color: #fff;
+}
+
+.menu .item.active{
+	background-color: #4a585f;
+	border-color: transparent;
+}
+
+.menu .item.item-divider{
+	color: #424648;
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+.menu .bar-header{
+  border-color: transparent;
+  background-color: transparent;
+  background-image: none;
+  color: #fff;
+}
+
+.menu .bar-header .buttons{
+	padding-right: 20px;	
+}
+
+.menu .bar-header .icon:before{
+	font-size: 20px !important;
+}
+
+.pane .bar.bar-light{
+
+}
+
+.pane .item{
+	margin: 10px 10px;
+	box-shadow: 0px 1px 4px #dedede;
+	border-radius: 5px;
+	border-color: transparent;
+}
+
+.pane .item.item-synceable{
+	box-shadow: none;
+	border-radius: 5px 5px 0px 0px;
+}
+
+.pane .item.item-syncing{
+	background-color: #fff;
+}
+
+.pane .item.item-select{
+  margin: 0;
+  box-shadow: none;
+  background-color: #2196F3;
+	border-top: 1px solid #1976D2;
+	border-bottom: 1px solid #1976D2;
+}
+
+.pane .item.item-select select{
+	background-color: #2196F3;
+}
+
+.pane .item.item-input{
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.pane .item.item-input .ng-invalid{
+	border-color: #F44336;
+	color: #F44336;
+}
+
+.pane .fitlers-row{
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.pane .item.item-divider{
+	margin: 0;
+	box-shadow: none;
+	border-radius: 0px;
+	border-color: transparent;
+	margin-top: 10px;
+}
+
+.pane .item-divider + .item {
+	margin-top: 0;
+}
+
+.pane .item.row{
+	margin: 0;
+	border-radius: 0px;
+	box-shadow: none;
+}
+
+.pane .client-details{
+	box-shadow: 0px 1px 4px #dedede;
+}
+
+.pane .client-details.no-shadow{
+	box-shadow: none;
+}
+
+.pane .item.col{
+	border-radius: 0px;
+}
+
+.pane .client-details .item:first-child{
+	margin-top: 0;
+}
+
+.pane .item.activated{
+	border-color: transparent;
+  background-color: #2196F3;
+  color: #fff;
+}
+
+.pane .item.activated *{
+	color: #fff !important;
+}
+
+.pane .list.paginable{
+	min-height: 500px;
+	min-height: 100vh;
+}
+
+
 /*debuging*/
 /*ion-side-menus{
 	max-width: 400px;
@@ -392,6 +533,10 @@
 
 /*TABLET-TWEEKS*/
 @media screen and (min-width: 769px) {
+	.hidden-tablet{
+		display: none !important;
+	}
+
 	.menu-content{
 		left: 275px;
 		width: auto;

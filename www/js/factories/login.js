@@ -20,7 +20,7 @@ angular.module('clg.factories')
 	  */
 	  _scope.createLocalLogin = function(user, successCallback, errorCallback) {
 	    var query = "INSERT INTO users (email, name, password, is_logged, auto_sync) VALUES (?,?,?,?,?)";
-	        $cordovaSQLite.execute($rootScope.database, query, [user.email, user.name, user.password, 0, 1]).then(function(res) {
+	        $cordovaSQLite.execute($rootScope.database, query, [user.email, user.name, user.password, 1, 1]).then(function(res) {
 	          successCallback.call(this, res.insertId);
 	    }, function (err) {
 	        $rootScope.utils.showAlert("Error", "No se pudo guardar la sesion. - " + err);
@@ -32,7 +32,7 @@ angular.module('clg.factories')
 	    logged = logged || 1;
 
 	    var query = "UPDATE users SET is_logged = ? WHERE id = ?";
-	    $cordovaSQLite.execute($rootScope.database, query, [logged, id]).then(function(res) {
+	    $cordovaSQLite.execute($rootScope.database, query, [1, id]).then(function(res) {
 	      successCallback.call(this, original_res);
 	    }, function (err) {
 	      errorCallback.call(this, err);
@@ -236,41 +236,46 @@ angular.module('clg.factories')
 
 	    $cordovaSQLite.execute($rootScope.database,
 	      "CREATE TABLE IF NOT EXISTS users (id integer primary key, email text, name text, password text, is_logged integer, "
-	      + "auto_sync integer)");
+	      + "auto_sync integer)").then(function() {
 
-	    _scope.checkLocalUserLogged(function(res) {
-	      _scope.setUserAsLogged.call(this, res.id, 1, res,
-	        function(res) {
-	          $rootScope.user.setLoggedAs(res);
+	      	//Because sqlite.queries are async, wait for it to be done
+	      	_scope.checkLocalUserLogged(function(res) {
+			      _scope.setUserAsLogged.call(this, res.id, 1, res,
+			        function(res) {
+			          $rootScope.user.setLoggedAs(res);
 
-	          $rootScope.utils.checkedAuth = true;
+			          $rootScope.utils.checkedAuth = true;
 
-	          if ( $rootScope.utils.back_to.name && $state.current.name != $rootScope.utils.back_to.name ) {
-	            $state.go($rootScope.utils.back_to.name, $rootScope.utils.back_to.params);
-	          } else {
-	          	$state.go("home");
-	          }
+			          if ( $rootScope.utils.back_to.name && $state.current.name != $rootScope.utils.back_to.name ) {
+			            $state.go($rootScope.utils.back_to.name, $rootScope.utils.back_to.params);
+			          } else {
+			          	$state.go("home");
+			          }
 
-	          // console.log("now i must loggin..");
+			          // console.log("now i must loggin..");
 
-            $rootScope.utils.back_to = { name: "", params: {} };
+		            $rootScope.utils.back_to = { name: "", params: {} };
 
-          	$timeout(function() {
-          		$rootScope.loginmodal.hide();
-          		$timeout($rootScope.utils.loaded, 100);
-          	}, 800);
+		          	$timeout(function() {
+		          		$rootScope.loginmodal.hide();
+		          		$timeout($rootScope.utils.loaded, 100);
+		          	}, 800);
 
 
-	        },
-	        function(err) {
-	          // console.log(err);
-	        });
+			        },
+			        function(err) {
+			          // console.log(err);
+			        });
 
-	    }, function( err, generator ) {
-	      //No session exists
-	      // console.log(err, generator);
-	      $rootScope.utils.loaded();
-	    });
+			    }, function( err, generator ) {
+			      //No session exists
+			      // console.log(err, generator);
+			      $rootScope.utils.loaded();
+			    });
+
+
+	      });
+
 	  }
 
 

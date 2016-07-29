@@ -20,7 +20,7 @@
   <ion-content>
    <div class="spacer"></div>
     
-   <div class="list">
+   <div class="list paginable">
 
     <a class="item item-client" ng-repeat="item in clientes.busqueda.resultados[clientes.busqueda.pagina_actual]" href="{{ clientes.routing.cliente( item.ClienteCodigo ) }}">
       <span class="item-note">#{{ item.ClienteCodigo }}</span>
