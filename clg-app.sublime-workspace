@@ -327,15 +327,31 @@
 			"file": "www/js/app.js",
 			"settings":
 			{
-				"buffer_size": 2398,
+				"buffer_size": 3568,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "www/js/routes.js",
+			"file": "config.xml",
 			"settings":
 			{
-				"buffer_size": 3173,
+				"buffer_size": 5346,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "readme.md",
+			"settings":
+			{
+				"buffer_size": 208,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "www/js/factories/syncing.js",
+			"settings":
+			{
+				"buffer_size": 12921,
 				"line_ending": "Windows"
 			}
 		},
@@ -348,11 +364,59 @@
 			}
 		},
 		{
-			"file": "config.xml",
+			"file": "www/js/controllers/user/login.js",
 			"settings":
 			{
-				"buffer_size": 5331,
+				"buffer_size": 221,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "www/js/factories/login.js",
+			"settings":
+			{
+				"buffer_size": 8469,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/js/routes.js",
+			"settings":
+			{
+				"buffer_size": 3173,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "www/js/controllers/user/logout.js",
+			"settings":
+			{
+				"buffer_size": 1467,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "www/js/factories/authentification.js",
+			"settings":
+			{
+				"buffer_size": 1530,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "www/js/factories/products.js",
+			"settings":
+			{
+				"buffer_size": 10433,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "www/js/factories/clients.js",
+			"settings":
+			{
+				"buffer_size": 5551,
+				"line_ending": "Windows"
 			}
 		},
 		{
@@ -391,8 +455,16 @@
 			"file": "www/js/factories/sidemenu.js",
 			"settings":
 			{
-				"buffer_size": 607,
+				"buffer_size": 628,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "www/index.html",
+			"settings":
+			{
+				"buffer_size": 5692,
+				"line_ending": "Unix"
 			}
 		},
 		{
@@ -458,9 +530,6 @@
 	"expanded_folders":
 	[
 		"/E/httpdocs/clg-app",
-		"/E/httpdocs/clg-app/platforms",
-		"/E/httpdocs/clg-app/platforms/android",
-		"/E/httpdocs/clg-app/plugins",
 		"/E/httpdocs/clg-app/scss",
 		"/E/httpdocs/clg-app/www",
 		"/E/httpdocs/clg-app/www/css",
@@ -482,6 +551,88 @@
 	],
 	"file_history":
 	[
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/armv7/debug/www/js/controllers/clients/index.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/armv7/release/www/js/controllers/inventory/categorias/show.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/armv7/release/www/js/controllers/inventory/marcas/index.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/armv7/release/www/js/controllers/inventory/marcas/show.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/armv7/release/www/js/controllers/inventory/products/index.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/armv7/release/www/js/controllers/inventory/products/show.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/debug/www/js/controllers/clients/index.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/debug/www/js/controllers/clients/show.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/debug/www/js/controllers/clients/reports/index.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/debug/www/js/controllers/clients/reports/show.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/debug/www/js/controllers/inventory/categorias/index.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/debug/www/js/controllers/inventory/categorias/show.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/debug/www/js/controllers/inventory/marcas/index.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/debug/www/js/controllers/inventory/marcas/show.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/debug/www/js/controllers/inventory/products/index.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/debug/www/js/controllers/inventory/products/show.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/release/www/js/controllers/clients/index.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/release/www/js/controllers/clients/show.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/release/www/js/controllers/clients/reports/index.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/release/www/js/controllers/clients/reports/show.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/release/www/js/controllers/inventory/categorias/index.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/release/www/js/controllers/inventory/categorias/show.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/release/www/js/controllers/inventory/marcas/index.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/release/www/js/controllers/inventory/marcas/show.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/release/www/js/controllers/inventory/products/index.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/release/www/js/controllers/inventory/products/show.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/x86/debug/www/js/controllers/clients/index.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/x86/debug/www/js/controllers/clients/show.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/x86/debug/www/js/controllers/clients/reports/index.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/x86/debug/www/js/controllers/clients/reports/show.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/x86/debug/www/js/controllers/inventory/categorias/index.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/x86/debug/www/js/controllers/inventory/categorias/show.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/x86/debug/www/js/controllers/inventory/marcas/index.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/x86/debug/www/js/controllers/inventory/marcas/show.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/x86/debug/www/js/controllers/inventory/products/index.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/x86/debug/www/js/controllers/inventory/products/show.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/x86/release/www/js/controllers/clients/index.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/x86/release/www/js/controllers/clients/show.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/x86/release/www/js/controllers/clients/reports/index.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/x86/release/www/js/controllers/clients/reports/show.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/x86/release/www/js/controllers/inventory/categorias/index.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/x86/release/www/js/controllers/inventory/categorias/show.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/x86/release/www/js/controllers/inventory/marcas/index.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/x86/release/www/js/controllers/inventory/marcas/show.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/x86/release/www/js/controllers/inventory/products/index.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/x86/release/www/js/controllers/inventory/products/show.js",
+		"/E/httpdocs/clg-app/www/js/controllers/clients/index.js",
+		"/E/httpdocs/clg-app/www/js/controllers/clients/show.js",
+		"/E/httpdocs/clg-app/www/js/controllers/clients/reports/index.js",
+		"/E/httpdocs/clg-app/www/js/controllers/clients/reports/show.js",
+		"/E/httpdocs/clg-app/www/js/controllers/inventory/categorias/index.js",
+		"/E/httpdocs/clg-app/www/js/controllers/inventory/categorias/show.js",
+		"/E/httpdocs/clg-app/www/js/controllers/inventory/marcas/index.js",
+		"/E/httpdocs/clg-app/www/js/controllers/inventory/marcas/show.js",
+		"/E/httpdocs/clg-app/www/js/controllers/inventory/products/index.js",
+		"/E/httpdocs/clg-app/www/js/controllers/inventory/products/show.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/armv7/release/www/js/controllers/inventory/categorias/index.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/armv7/release/www/js/controllers/clients/reports/show.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/armv7/release/www/js/controllers/clients/reports/index.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/armv7/release/www/js/controllers/clients/show.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/armv7/release/www/js/controllers/clients/index.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/armv7/debug/www/js/controllers/inventory/products/show.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/armv7/debug/www/js/controllers/inventory/products/index.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/armv7/debug/www/js/controllers/inventory/marcas/show.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/armv7/debug/www/js/controllers/inventory/marcas/index.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/armv7/debug/www/js/controllers/inventory/categorias/show.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/armv7/debug/www/js/controllers/inventory/categorias/index.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/armv7/debug/www/js/controllers/clients/reports/show.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/armv7/debug/www/js/controllers/clients/reports/index.js",
+		"/E/httpdocs/clg-app/platforms/android/build/intermediates/assets/armv7/debug/www/js/controllers/clients/show.js",
+		"/E/httpdocs/clg-app/platforms/android/assets/www/js/controllers/inventory/products/show.js",
+		"/E/httpdocs/clg-app/platforms/android/assets/www/js/controllers/inventory/products/index.js",
+		"/E/httpdocs/clg-app/platforms/android/assets/www/js/controllers/inventory/marcas/show.js",
+		"/E/httpdocs/clg-app/platforms/android/assets/www/js/controllers/inventory/categorias/show.js",
+		"/E/httpdocs/clg-app/platforms/android/assets/www/js/controllers/inventory/marcas/index.js",
+		"/E/httpdocs/clg-app/platforms/android/assets/www/js/controllers/inventory/categorias/index.js",
+		"/E/httpdocs/clg-app/platforms/android/assets/www/js/controllers/clients/reports/show.js",
+		"/E/httpdocs/clg-app/platforms/android/assets/www/js/controllers/clients/reports/index.js",
+		"/E/httpdocs/clg-app/platforms/android/assets/www/js/controllers/clients/show.js",
+		"/E/httpdocs/clg-app/platforms/android/assets/www/js/controllers/clients/index.js",
+		"/E/httpdocs/clg-app/www/js/routes.js",
+		"/E/httpdocs/clg-app/config.xml",
 		"/C/Users/jadiel/.android/debug.keystore",
 		"/E/httpdocs/clg-app/www/index.html",
 		"/E/httpdocs/clg-app/www/views/inventario/filtros.html",
@@ -499,13 +650,11 @@
 		"/E/httpdocs/clg-app/www/js/factories/login.js",
 		"/E/httpdocs/clg-app/www/js/factories/syncing.js",
 		"/E/httpdocs/clg-app/www/js/factories/authentification.js",
-		"/E/httpdocs/clg-app/config.xml",
 		"/E/httpdocs/clg-app/www/js/controllers/MainController.js",
 		"/E/httpdocs/clg-app/www/js/controllers/SyncController.js",
 		"/E/httpdocs/clg-app/www/views/sincronizacion/newTask.html",
 		"/E/httpdocs/clg-app/www/views/sincronizacion/settings.html",
 		"/E/httpdocs/clg-app/www/js/factories/clients.js",
-		"/E/httpdocs/clg-app/www/js/routes.js",
 		"/E/httpdocs/clg-app/www/css/style.css",
 		"/E/httpdocs/clg-app/www/js/app.js",
 		"/E/httpdocs/clg-app/platforms/android/assets/www/js/factories/authentification.js",
@@ -529,87 +678,7 @@
 		"/E/httpdocs/clg-app/www/views/sync.html",
 		"/E/httpdocs/dccolorweb.elpiche/wp_charity/header.php",
 		"/E/httpdocs/clg-app/www/js/controllers/clients/search.js",
-		"/E/httpdocs/clg-app/www/views/inventario/categorias/show.html",
-		"/E/httpdocs/clg-app/www/js/controllers/inventory/categorias/show.js",
-		"/E/httpdocs/clg-app/www/js/controllers/inventory/marcas/show.js",
-		"/E/httpdocs/clg-app/www/js/controllers/inventory/categorias/index.js",
-		"/E/httpdocs/clg-app/www/js/controllers/inventory/products/show.js",
-		"/E/httpdocs/clg-app/www/js/controllers/inventory/products/index.js",
-		"/E/httpdocs/clg-app/www/js/controllers/inventory/marcas/index.js",
-		"/E/httpdocs/clg-app/www/views/inventario/marcas/show.html",
-		"/E/httpdocs/clg-app/www/views/inventario/productos/show.html",
-		"/E/httpdocs/clg-app/www/views/clients/facturas/show.html",
-		"/E/httpdocs/clg-app/www/views/clients/show.html",
-		"/E/httpdocs/clg-app/www/js/controllers/clients/reports/show.js",
-		"/E/httpdocs/clg-app/www/js/controllers/clients/index.js",
-		"/E/httpdocs/clg-app/www/js/factories/inventoryactivities.js",
-		"/E/httpdocs/clg-app/www/views/inventory/index.html",
-		"/E/httpdocs/clg-app/www/js/controllers/inventory/inventory.js",
-		"/E/httpdocs/clg-app/www/js/controllers/HomeController.js",
-		"/E/httpdocs/clg-app/www/js/factories/homeactivities.js",
-		"/E/httpdocs/clg-app/www/js/controllers/LoginController.js",
-		"/E/httpdocs/clg-app/www/js/controllers/clients/show.js",
-		"/E/httpdocs/clg-app/www/js/controllers/clients/reports/index.js",
-		"/E/httpdocs/clg-app/www/js/controllers/products/search.js",
-		"/E/httpdocs/clg-app/www/js/controllers/products/products.js",
-		"/E/httpdocs/nuu/christian-school/src/styles/_config.scss",
-		"/E/httpdocs/nuu/christian-school/src/styles/_utils.scss",
-		"/E/httpdocs/nuu/christian-school/src/styles/_fonts.scss",
-		"/E/httpdocs/clg-app/www/js/factories/ClientsFactory.js",
-		"/E/httpdocs/clg-app/www/js/controllers/ClientsController.js",
-		"/E/httpdocs/clg-app/www/views/clients.facturas.html",
-		"/E/httpdocs/clg-app/www/views/clients.facturas.details.html",
-		"/E/httpdocs/clg-app/www/views/clients.details.html",
-		"/E/httpdocs/clg-app/www/views/clients.html",
-		"/E/httpdocs/clg-app/www/views/clients.popover.html",
-		"/C/Users/jadiel/AppData/Local/Temp/scp31811/public_html/pinedajay/default.html",
-		"/E/httpdocs/clg-app/.gitignore",
-		"/E/httpdocs/clg-app/platforms/platforms.json",
-		"/E/httpdocs/clg-app/www/js/run.js",
-		"/E/httpdocs/clg-app/www/lib/biu/src/jade/index.jade",
-		"/E/httpdocs/clg-app/www/js/controllers/LogoutController.js",
-		"/E/httpdocs/clg-app/endpoints/user_login.php",
-		"/E/httpdocs/clg-app/www/lib/biu/node_modules/xo/node_modules/babel-eslint/node_modules/babel-types/node_modules/lodash/_assignInDefaults.js",
-		"/E/httpdocs/clg-app/www/lib/biu/dist/biu.cjs.js",
-		"/E/httpdocs/clg-app/www/lib/biu/.bower.json",
-		"/E/httpdocs/clg-app/www/lib/biu/src/styl/biu.styl",
-		"/E/httpdocs/clg-app/www/lib/biu/src/js/biu.js",
-		"/E/httpdocs/clg-app/.bowerrc",
-		"/C/Users/jadiel/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
-		"/E/httpdocs/clg-app/www/js/factories/AuthManager.js",
-		"/E/httpdocs/clg-app/endpoints/api_config.php",
-		"/E/httpdocs/clg-app/endpoints/user_login.json",
-		"/E/httpdocs/clg-app/endpoints/user_login_error.json",
-		"/E/httpdocs/clg-app/endpoints/clients.php",
-		"/E/httpdocs/clg-app/endpoints/products.php",
-		"/E/httpdocs/clg-app/endpoints/clientes.php",
-		"/E/httpdocs/dccolorweb/gds/events/index.php",
-		"/E/httpdocs/nuu/mora-state/bower.json",
-		"/E/httpdocs/nuu/mora-state/src/scripts/blog-grid.js",
-		"/E/httpdocs/nuu/mora-state/gulpfile.js",
-		"/E/httpdocs/elliemae/editor/inDaaS/angular/factories/pages.js",
-		"/E/httpdocs/elliemae/editor/inDaaS/angular/services/dialog.js",
-		"/E/httpdocs/elliemae/editor/inDaaS/angular/controllers/content_editor.js",
-		"/E/httpdocs/elliemae/editor/inDaaS/angular/main.js",
-		"/E/vagrantdocs/archgard-cms/app/assets/javascripts/zzzz-main.js",
-		"/E/httpdocs/dccolorweb/gds/assets/sass/_revamp-story.scss",
-		"/E/httpdocs/dccolorweb/gds/index.php",
-		"/E/httpdocs/clg-app/scss/ionic.app.scss",
-		"/E/httpdocs/clg-app/endpoints/categorias.json",
-		"/E/httpdocs/clg-app/endpoints/productos.php",
-		"/E/httpdocs/clg-app/endpoints/marcas.php",
-		"/E/httpdocs/clg-app/endpoints/facturas.php",
-		"/E/httpdocs/clg-app/endpoints/categorias.php",
-		"/E/httpdocs/clg-app/endpoints/clientes.json",
-		"/E/httpdocs/clg-app/endpoints/productos.json",
-		"/E/httpdocs/clg-app/endpoints/marcas.json",
-		"/E/httpdocs/clg-app/endpoints/facturas.json",
-		"/E/httpdocs/morastate/wp-content/themes/mora-state/content.php",
-		"/E/httpdocs/morastate/wp-content/themes/mora-state/index.php",
-		"/E/httpdocs/morastate/wp-content/themes/mora-state/templates/page-home.php",
-		"/E/httpdocs/dccolorweb.gdsbrasil/bower.json",
-		"/E/httpdocs/morastate/wp-content/themes/mora-state/content-wines.php",
-		"/E/httpdocs/morastate/wp-content/themes/mora-state/footer.php"
+		"/E/httpdocs/clg-app/www/views/inventario/categorias/show.html"
 	],
 	"find":
 	{
@@ -628,6 +697,23 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"porfavor sincroniza los datos para continuar",
+			"sincronizacion requerida",
+			"startBackgroundSyncing",
+			"fetchAll",
+			"startBackgroundSyncing",
+			"tasks.new",
+			"setLoggedAs",
+			"checkLocalUser",
+			"loginSuccess",
+			"login",
+			"setUserAsLogged",
+			"setLoggedAs",
+			"loginSuccess",
+			"Login",
+			"login",
+			"setAutoSync",
+			"checkDBSupport",
 			"filtersDropdown",
 			"deviceRea",
 			"syncAll",
@@ -738,18 +824,7 @@
 			"trigger",
 			"setCurrentTime",
 			"onFinish",
-			"seek",
-			"addVimeoApiEvent",
-			"Event",
-			"addEvent",
-			"muted",
-			"onPlayProgress",
-			"addEvent",
-			"seek",
-			"setMu",
-			"ready",
-			"$f",
-			"ambient"
+			"seek"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -757,6 +832,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"por favor sincroniza los datos para continuar",
 			"$rootScope.loginmodal",
 			"_scope.",
 			"$rootScope.utils.backgroundLoading",
@@ -778,7 +854,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -787,15 +863,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2398,
+						"buffer_size": 3568,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1474,
-								1474
+								2090,
+								2090
 							]
 						],
 						"settings":
@@ -805,44 +881,102 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 320.0,
+						"translation.y": 480.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "www/js/routes.js",
+					"file": "config.xml",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3173,
+						"buffer_size": 5346,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								305,
-								305
+								916,
+								916
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "readme.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 208,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								208,
+								208
+							]
+						],
+						"settings":
+						{
+							"open_with_edit": true,
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "www/js/factories/syncing.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12921,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								11642,
+								11642
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 450.0,
+						"translation.y": 6533.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 4,
 					"file": "www/css/style.css",
 					"semi_transient": false,
 					"settings":
@@ -854,53 +988,227 @@
 						"selection":
 						[
 							[
-								8977,
-								8977
+								9042,
+								9042
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/CSS/CSS.sublime-syntax"
 						},
-						"translation.x": -0.0,
+						"translation.x": 0.0,
 						"translation.y": 7592.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "config.xml",
+					"buffer": 5,
+					"file": "www/js/controllers/user/login.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5331,
+						"buffer_size": 221,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								981,
-								981
+								194,
+								194
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/XML/XML.sublime-syntax",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "www/js/factories/login.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8469,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6673,
+								6684
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2731.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "www/js/routes.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3173,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								302,
+								318
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 55.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 8,
+					"file": "www/js/controllers/user/logout.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1467,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								478,
+								481
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "www/js/factories/authentification.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1530,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1051,
+								1051
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 552.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "www/js/factories/products.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10433,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6200,
+								6276
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 2867.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "www/js/factories/clients.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5551,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4264,
+								4264
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 1850.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
 					"file": "www/views/login.html",
 					"semi_transient": false,
 					"settings":
@@ -926,11 +1234,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 15,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 13,
 					"file": "www/views/modallogin.html",
 					"semi_transient": false,
 					"settings":
@@ -956,11 +1264,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 16,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 14,
 					"file": "www/views/inventario/search.html",
 					"semi_transient": false,
 					"settings":
@@ -986,11 +1294,11 @@
 						"translation.y": 300.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 14,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 15,
 					"file": "www/js/factories/homeactivities.js",
 					"semi_transient": false,
 					"settings":
@@ -1016,24 +1324,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 17,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 16,
 					"file": "www/js/factories/sidemenu.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 607,
+						"buffer_size": 628,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								386,
-								386
+								169,
+								169
 							]
 						],
 						"settings":
@@ -1046,11 +1354,41 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 12,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 17,
+					"file": "www/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5692,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4904,
+								4909
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1223.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 18,
 					"file": "www/js/controllers/inventory/search.js",
 					"semi_transient": false,
 					"settings":
@@ -1075,7 +1413,7 @@
 						"translation.y": 1559.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 18,
 					"type": "text"
 				}
 			]
